@@ -1,0 +1,28 @@
+:root {
+  /* Fonts */
+  --font-family_poppins: 'Poppins', sans-serif;
+
+  /* Colors */
+  --colors_dark-grey: #46494e;
+  --colors_near-black: #0a1119;
+  --colors_sun-up: #ffbf00;
+
+  /* Responsive Display Size */
+  --max-width-tablet: 768px;
+}
+
+span {
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-family: var(--font-family_poppins);
+  color: var(--colors_dark-grey);
+  line-height: 20px;
+}
+
+h5 {
+  font-size: 18px;
+  font-weight: 600;
+  font-style: var(--font-family_poppins);
+  color: var(--colors_near-black);
+  line-height: 30px;
+}

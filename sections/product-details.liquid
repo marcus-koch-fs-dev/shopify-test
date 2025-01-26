@@ -1,5 +1,6 @@
-<link rel="stylesheet" href={{"product-details.css"| asset_url }}>
-<script src={{"product-details.js"| asset_url }} defer="defer" />
+<link rel="stylesheet" href="{{ 'product-details.css' | asset_url }}">
+<script src="{{ 'product-details.js' | asset_url }}" defer="defer"></script>
+
 
 <section class="product-details">
   <!-- Left Section: Image Gallery -->
@@ -31,7 +32,6 @@
 
   <!-- Right Section: Product Details -->
   <div class="buybox">
-
     <!-- Highlights -->
     <div class="highlights">
       {% if section.settings.express %}
@@ -41,41 +41,22 @@
         <p class="highlights--discount">Sonderangebot</p>
       {% endif %}
     </div>
-
-    <!-- Ratings and Product Information -->
-    <div class="product-info">
-      <div class="ratings">
-        <div class="rating-stars">
-          {% assign stars = section.settings.rating_stars | plus: 0 %}
-          {% if stars >= 1 and stars <= 5 %}
-            {% for i in (1..stars) %}
-              <img
-                src="{{ 'icon-star.svg' | asset_url }}"
-                alt="Rating Star"
-                width="12"
-                height="12">
-            {% endfor %}
-          {% endif %}
-
-        </div>
-        <span class="rating-quantity">({{ section.settings.feedbackNo }})</span>
-        <span class="rating-artNo">Article No.: {{ section.settings.artNo }}</span>
-        <div class="product-name">
-          <h5>{{ section.settings.titel }}</h5>
-        </div>
-        <div class="brand">
-          <img
-            src="{{ section.settings.brand_logo | image_url }}"
-            alt="Brand Logo"
-            width="100%"
-            height="auto">
-        </div>
-        <p class="description">
-          {{ section.settings.prodDescription }}
-        </p>
-      </div>
-    </div>
-
+    <h1>
+      {{ product.metafields.custom.brand_logo | image_url }}
+    </h1>
+    {% render 'product-info'
+      , rating_stars: section.settings.rating_stars
+      , feedbackNo: section.settings.feedbackNo
+      , show_artNo: section.settings.show_artNo
+      , artNo: section.settings.artNo
+      , show-favorite: section.settings.show-favorite 
+      , offensive_title: section.settings.bold-title
+      , show_brand: section.settings.show_brand-logo
+    %}
+    <!-- Extra Info - Metainfo -->
+    <p class="description">
+      {{ section.settings.prodDescription }}
+    </p>
     <!-- Variants Section -->
     <div class="product-variants">
       <div class="current-selected">
@@ -201,7 +182,7 @@
     "blocks": [],
     "presets": [
       {
-        "name": "Default Product Details"
+        "name": "Product Details"
       }
     ],
     "settings": [
@@ -226,31 +207,50 @@
       {
         "type": "text",
         "id": "rating_stars",
-        "label": "Star Rating (1-5)",
+        "label": "Rating Stars",
         "default": "5"
       },
       {
         "type": "text",
         "id": "feedbackNo",
-        "label": "Feedback Count",
-        "default": "89"
+        "label": "Number of Feedbacks",
+        "default": "44"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_artNo",
+        "label": "Show Article Number",
+        "default": true
       },
       {
         "type": "text",
         "id": "artNo",
         "label": "Article Number",
-        "default": "GH-3434"
+        "default": "12345"
+      },
+      {
+        "type": "checkbox",
+        "id": "show-favorite",
+        "label": "Show Favorite Icon",
+        "default": true
       },
       {
         "type": "text",
         "id": "titel",
         "label": "Product Title",
-        "default": "Default Title"
+        "default": "Default Product Name"
       },
       {
-        "type": "image_picker",
-        "id": "brand_logo",
-        "label": "Brand Logo"
+        "type": "checkbox",
+        "id": "bold-title",
+        "label": "Use H5 for Product Title",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_brand-logo",
+        "label": "Show Brand Logo",
+        "default": true
       },
       {
         "type": "textarea",
@@ -269,7 +269,6 @@
         "id": "quantity",
         "label": "Default Quantity",
         "default": 1
-
       },
       {
         "type": "checkbox",
@@ -291,3 +290,33 @@
     ]
   }
 {% endschema %}
+
+// {
+      //   "type": "text",
+      //   "id": "rating_stars",
+      //   "label": "Star Rating (1-5)",
+      //   "default": "5"
+      // },
+      // {
+      //   "type": "text",
+      //   "id": "feedbackNo",
+      //   "label": "Feedback Count",
+      //   "default": "89"
+      // },
+      // {
+      //   "type": "text",
+      //   "id": "artNo",
+      //   "label": "Article Number",
+      //   "default": "GH-3434"
+      // },
+      // {
+      //   "type": "text",
+      //   "id": "titel",
+      //   "label": "Product Title",
+      //   "default": "Default Title"
+      // },
+      // {
+      //   "type": "image_picker",
+      //   "id": "brand_logo",
+      //   "label": "Brand Logo"
+      // },

@@ -1,0 +1,74 @@
+{% comment %} 
+                                                                                                Usage:
+                                                                                                    {% render 'product-info', 
+                                                                                                rating_stars: section.settings.rating_stars, 
+                                                                                                feedbackNo: section.settings.feedbackNo, 
+                                                                                                show_artNo: section.settings.show_artNo, 
+                                                                                                artNo: section.settings.artNo, 
+                                                                                                showFavorite: section.settings.showFavorite, 
+                                                                                                isFav: section.settings.isFav, 
+                                                                                                titel: section.settings.titel, 
+                                                                                                offensive_title: section.settings.offensive_title, 
+                                                                                                show_brand: section.settings.show_brand, 
+                                                                                      
+                                                                                              %}
+ {% endcomment %}
+
+<link rel="stylesheet" href="{{ 'product-info.css' | asset_url }}">
+
+<!-- Ratings and Product Information -->
+<div class="product-info">
+  <!-- Row 1 -->
+  <div class="product-info__row-one">
+    <div class="product-info__web-view">
+      <div class="rating">
+        {% assign stars = section.settings.rating_stars | plus: 0 %}
+        {% if stars >= 1 and stars <= 5 %}
+          {% for i in (1..stars) %}
+            <span class="rating__star">&#9733;</span>
+          <!-- Gefüllter Stern -->
+            {% comment %} <span class="star">&#9734;</span> <!-- Ungefüllter Stern --> {% endcomment %}
+          {% endfor %}
+        {% endif %}
+        <span class="rating__feedback">({{ section.settings.feedbackNo }})</span>
+      </div>
+
+      <div class="product-artno">
+        {% if section.settings.show_artNo %}
+          <span class="product-artno__text">Art.-No.: {{ section.settings.artNo }}</span>
+        {% endif %}
+      </div>
+    </div>
+    {% if section.settings.show-favorite %}
+      <div class="favorite">
+        <img
+          class="favorite__icon {% if section.settings.show-favorite %}favorite__icon--active{% endif %}"
+          src="{{ 'icon-heart.svg' | asset_url }}"
+          alt="Favorite Icon"
+          width="auto"
+          height="auto">
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- Row 2 -->
+  <div class="product-name">
+    {% if section.settings.bold-title %}
+      <h5 class="product-name__title">{{ product.title }}</h5>
+    {% else %}
+      <span class="product-name__title">{{ product.title }}</span>
+    {% endif %}
+  </div>
+
+
+  {% if section.settings.show_brand-logo %}
+    <div class="brand">
+      <img
+        class="brand__logo"
+        src="{{ product.metafields.custom.brand_logo | image_url }}"
+        alt="Brand Logo"
+        width="auto"
+        height="auto">
+    </div>
+  {% endif %}
+</div>
