@@ -1,0 +1,48 @@
+/* Äußere Sections nebeneinander anordnen */
+.image-gallery,
+.buy-box-container {
+  display: inline-block; /* Macht die Sections nebeneinander platzierbar */
+  width: 50%; /* Jede Section nimmt 50% des Containers ein */
+  vertical-align: top; /* Sicherstellen, dass sie oben ausgerichtet sind */
+  box-sizing: border-box; /* Padding wird in die Breite einbezogen */
+  padding: 10px;
+}
+
+/* Responsive Ansicht: untereinander anordnen */
+@media (max-width: 768px) {
+  .image-gallery,
+  .buy-box-container {
+    display: block;
+    width: 100%; /* Volle Breite */
+    padding: 10px 0;
+  }
+}
+
+/* .product-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.product-details__image-gallery {
+  border-right: 1px solid #343fdf;
+}
+
+.product-details__buybox {
+  padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+  .product-details {
+    grid-template-columns: 1fr;
+  }
+
+  .product-details__image-gallery {
+    border-right: none;
+    margin-bottom: 20px;
+  }
+
+  .product-details__buybox {
+    padding-left: 0;
+  }
+} */
