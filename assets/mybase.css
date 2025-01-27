@@ -4,8 +4,12 @@
 
   /* Colors */
   --colors_dark-grey: #46494e;
+  --colors_medium-grey: #838487;
+  --colors_light-grey: #c0bebe;
+  /* --colors_light-grey: firebrick; */
   --colors_near-black: #0a1119;
   --colors_sun-up: #ffbf00;
+  --colors_sun-down: #ff6633;
 
   /* Responsive Display Size */
   --max-width-tablet: 768px;
@@ -25,4 +29,11 @@ h5 {
   font-style: var(--font-family_poppins);
   color: var(--colors_near-black);
   line-height: 30px;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }

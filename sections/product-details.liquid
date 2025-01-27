@@ -41,11 +41,9 @@
         <p class="highlights--discount">Sonderangebot</p>
       {% endif %}
     </div>
-    <h1>
-      {{ product.metafields.custom.brand_logo | image_url }}
-    </h1>
+
     {% render 'product-info'
-      , rating_stars: section.settings.rating_stars
+      , rating_stars: section.settings.rating_stars 
       , feedbackNo: section.settings.feedbackNo
       , show_artNo: section.settings.show_artNo
       , artNo: section.settings.artNo
@@ -57,17 +55,10 @@
     <p class="description">
       {{ section.settings.prodDescription }}
     </p>
-    <!-- Variants Section -->
-    <div class="product-variants">
-      <div class="current-selected">
-        <span>Capacity: {{ section.settings.selected }}</span>
-      </div>
-      <div class="variants">
-        <button>1000ml</button>
-        <button>2000ml</button>
-        <button>3000ml</button>
-      </div>
-    </div>
+
+    {% render 'product-options'
+      , rating_stars: section.settings.show-variations
+    %}
 
     <!-- Price Section -->
     <div class="price">
@@ -259,10 +250,10 @@
         "default": "Default description for the product."
       },
       {
-        "type": "text",
-        "id": "selected",
-        "label": "Selected Capacity",
-        "default": "1000ml"
+        "type": "checkbox",
+        "id": "show-variations",
+        "label": "Product Variations",
+        "default": true
       },
       {
         "type": "number",
