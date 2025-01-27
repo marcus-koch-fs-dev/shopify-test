@@ -60,28 +60,10 @@
       , rating_stars: section.settings.show-variations
     %}
 
-    <!-- Price Section -->
-    <div class="price">
-      <div class="normal-price"></div>
-      <div class="discount-price">
-        <span>199,99€</span>
-        <span>-35%</span>
-      </div>
-      <div class="add-tax">
-        <span>355€</span>
-        <p>inkl. Mwst, zzgl. Versand</p>
-      </div>
-      {% if section.settings.show_energy_label %}
-        <div class="energy-label">
-          <img
-            src="{{ section.settings.energy_label | image_url }}"
-            alt="Energy Efficiency Label"
-            width="100%"
-            height="auto">
-          <span>{{ section.settings.product_datasheet_label }}</span>
-        </div>
-      {% endif %}
-    </div>
+    {% render 'product-price'
+      , rating_stars: section.settings.show_energy_label
+    %}
+
 
     <!-- Cart Actions -->
     <div class="cart-action">
@@ -265,7 +247,7 @@
         "type": "checkbox",
         "id": "show_energy_label",
         "label": "Show Energy Label",
-        "default": false
+        "default": true
       },
       {
         "type": "image_picker",
@@ -274,9 +256,9 @@
       },
       {
         "type": "text",
-        "id": "product_datasheet_label",
-        "label": "Datasheet Label",
-        "default": "Energy Efficiency Datasheet"
+        "id": "energy_label_text",
+        "label": "Energy Efficency Label",
+        "default": "Produktdatenblatt"
       }
     ]
   }

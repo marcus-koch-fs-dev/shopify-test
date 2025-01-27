@@ -1,0 +1,90 @@
+@import url(mybase.css);
+
+.price-energy {
+  display: grid;
+  grid-template-areas: 'pric engy';
+}
+
+.price {
+  display: grid;
+  grid-area: pric;
+}
+
+.price__regular {
+  height: 30px;
+  text-decoration: line-through;
+}
+
+.discount {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.discount__offer {
+  color: var(--colors_semantic-price);
+  border: solid 1px var(--colors_semantic-price);
+  padding: 2px 4px;
+  margin: 3px 0;
+}
+
+.tax {
+  display: flex;
+  height: 30px;
+  align-items: center;
+}
+
+.tax__price {
+  color: var(--colors_near-black);
+}
+
+.tax__info {
+  color: var(--colors_near-black);
+}
+
+.energy {
+  display: grid;
+  grid-area: engy;
+  justify-content: right;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: end;
+}
+
+.energy-label {
+  display: flex;
+  width: 65px;
+  height: 36px;
+}
+
+.energy-label__text {
+  padding: 4px 0;
+  color: var(--colors_near-black);
+}
+
+@media (max-width: 768px) {
+  .price-energy {
+    display: grid;
+    grid-template-areas:
+      'engy'
+      'pric';
+  }
+
+  .energy {
+    justify-content: left;
+  }
+
+  .wrapper {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .energy-label {
+    transform: rotatey(180deg);
+    margin-right: 14px;
+  }
+}
