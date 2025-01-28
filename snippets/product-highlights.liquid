@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="{{ 'product-highlights.css' | asset_url }}">
+
+<!-- Highlights -->
+<div class="highlights">
+  {% if section.settings.discountOffer %}
+    <span class="highlights__discount">Angebot</span>
+  {% endif %}
+  {% if section.settings.express %}
+    <span class="highlights__express">Express</span>
+  {% endif %}
+</div>

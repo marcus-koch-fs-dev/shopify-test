@@ -9,15 +9,11 @@
 
   <!-- Right Section: Product Details -->
   <div class="buybox">
-    <!-- Highlights -->
-    <div class="highlights">
-      {% if section.settings.express %}
-        <p class="highlights--express">Expressversand</p>
-      {% endif %}
-      {% if section.settings.discountOffer %}
-        <p class="highlights--discount">Sonderangebot</p>
-      {% endif %}
-    </div>
+
+    {% render 'product-highlights'
+      , discountOffer: section.settings.discountOffer
+      , express: section.settings.express
+    %}
 
     {% render 'product-info'
       , rating_stars: section.settings.rating_stars 
@@ -147,12 +143,6 @@
         "id": "express",
         "label": "Enable Express Delivery",
         "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "orientation",
-        "label": "Horizontal Image Orientation",
-        "default": false
       },
       {
         "type": "text",

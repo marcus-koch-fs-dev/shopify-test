@@ -1,0 +1,22 @@
+.highlights {
+  display: inline;
+  /* gap: 4px; */
+}
+
+.highlights__express {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--colors_green);
+  padding: 2px 4px;
+  border: solid 1px var(--colors_green);
+}
+
+.highlights__discount {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--colors_semantic-price);
+  padding: 2px 4px;
+  border: solid 1px var(--colors_semantic-price);
+}
