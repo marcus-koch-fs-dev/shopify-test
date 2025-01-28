@@ -1,12 +1,19 @@
-/* Äußere Sections nebeneinander anordnen */
-
 .product-details {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.user-action {
+  display: flex;
+  flex-shrink: 0;
+  padding: 0 24px;
 }
 
 .buybox {
-  padding-left: 48px;
+  padding: 48px 48px 24px 48px;
+  border: solid 2px var(--colors_off-grey);
 }
 
 /* Responsive Ansicht: untereinander anordnen */

@@ -8,112 +8,113 @@
 
 
   <!-- Right Section: Product Details -->
-  <div class="buybox">
+  <div class="user-action">
+    <div class="buybox">
+      {% render 'product-highlights'
+        , discountOffer: section.settings.discountOffer
+        , express: section.settings.express
+      %}
 
-    {% render 'product-highlights'
-      , discountOffer: section.settings.discountOffer
-      , express: section.settings.express
-    %}
+      {% render 'product-info'
+        , rating_stars: section.settings.rating_stars 
+        , feedbackNo: section.settings.feedbackNo
+        , show_artNo: section.settings.show_artNo
+        , artNo: section.settings.artNo
+        , show-favorite: section.settings.show-favorite 
+        , offensive_title: section.settings.bold-title
+        , show_brand: section.settings.show_brand-logo
+      %}
+      {% render 'product-description' %}
 
-    {% render 'product-info'
-      , rating_stars: section.settings.rating_stars 
-      , feedbackNo: section.settings.feedbackNo
-      , show_artNo: section.settings.show_artNo
-      , artNo: section.settings.artNo
-      , show-favorite: section.settings.show-favorite 
-      , offensive_title: section.settings.bold-title
-      , show_brand: section.settings.show_brand-logo
-    %}
-    {% render 'product-description' %}
+      {% render 'product-options'
+        , rating_stars: section.settings.show-variations
+      %}
 
-    {% render 'product-options'
-      , rating_stars: section.settings.show-variations
-    %}
-
-    {% render 'product-price'
-      , rating_stars: section.settings.show_energy_label
-    %}
+      {% render 'product-price'
+        , rating_stars: section.settings.show_energy_label
+      %}
 
 
-    <!-- Cart Actions -->
-    <div class="cart-action">
-      <form action="" method="post">
-        <div class="product-counter">
-          <button type="button" class="product-counter--decrease">
+      <!-- Cart Actions -->
+      <div class="cart-action">
+        <form action="" method="post">
+          <div class="product-counter">
+            <button type="button" class="product-counter--decrease">
+              <img
+                src="{{ 'icon-minus.svg' | asset_url }}"
+                alt="Decrease"
+                width="24"
+                height="24">
+            </button>
+            <span class="product-counter--cart">{{ section.settings.quantity }}</span>
+            <button type="button" class="product-counter--increase">
+              <img
+                src="{{ 'icon-plus.svg' | asset_url }}"
+                alt="Increase"
+                width="24"
+                height="24">
+            </button>
+          </div>
+          <button type="submit" class="cart-action--submit">
             <img
-              src="{{ 'icon-minus.svg' | asset_url }}"
-              alt="Decrease"
+              src="{{ 'icon-cart.svg' | asset_url }}"
+              alt="Cart"
+              width="24"
+              height="24">
+            <span>In den Warenkorb</span>
+          </button>
+          <button type="button" class="cart-action--wishlist">
+            <img
+              src="{{ 'icon-heart.svg' | asset_url }}"
+              alt="Wishlist"
               width="24"
               height="24">
           </button>
-          <span class="product-counter--cart">{{ section.settings.quantity }}</span>
-          <button type="button" class="product-counter--increase">
-            <img
-              src="{{ 'icon-plus.svg' | asset_url }}"
-              alt="Increase"
-              width="24"
-              height="24">
-          </button>
-        </div>
-        <button type="submit" class="cart-action--submit">
+        </form>
+      </div>
+
+      <!-- Delivery and Retour -->
+      <div class="delivery-retour">
+        <p class="delivery-retour--text"></p>
+        <div class="deliver-time">
           <img
-            src="{{ 'icon-cart.svg' | asset_url }}"
-            alt="Cart"
-            width="24"
-            height="24">
-          <span>In den Warenkorb</span>
-        </button>
-        <button type="button" class="cart-action--wishlist">
-          <img
-            src="{{ 'icon-heart.svg' | asset_url }}"
+            src="{{ 'icon-tick.svg' | asset_url }}"
             alt="Wishlist"
             width="24"
             height="24">
-        </button>
-      </form>
-    </div>
-
-    <!-- Delivery and Retour -->
-    <div class="delivery-retour">
-      <p class="delivery-retour--text"></p>
-      <div class="deliver-time">
-        <img
-          src="{{ 'icon-tick.svg' | asset_url }}"
-          alt="Wishlist"
-          width="24"
-          height="24">
-        <p>Lieferbar in 3 Tagen</p>
-        <img
-          src="{{ 'icon-arrow.svg' | asset_url }}"
-          alt="Wishlist"
-          width="24"
-          height="24">
-      </div>
-      <div class="deliver-cost">
-        <img
-          src="{{ 'icon-truck.svg' | asset_url }}"
-          alt="Wishlist"
-          width="24"
-          height="24">
-        <p>Kostenloser Versand</p>
-        <img
-          src="{{ 'icon-arrow.svg' | asset_url }}"
-          alt="Wishlist"
-          width="24"
-          height="24">
-      </div>
-      <div class="deliver-time">
-        <img
-          src="{{ 'icon-return.svg' | asset_url }}"
-          alt="Wishlist"
-          width="24"
-          height="24">
-        <p>14 Tage Rückgabeservice</p>
-        <img
-          src="{{ 'icon-arrow.svg' | asset_url }}"
-          alt="Wishlist"
-          width="24"
-          height="24">
+          <p>Lieferbar in 3 Tagen</p>
+          <img
+            src="{{ 'icon-arrow.svg' | asset_url }}"
+            alt="Wishlist"
+            width="24"
+            height="24">
+        </div>
+        <div class="deliver-cost">
+          <img
+            src="{{ 'icon-truck.svg' | asset_url }}"
+            alt="Wishlist"
+            width="24"
+            height="24">
+          <p>Kostenloser Versand</p>
+          <img
+            src="{{ 'icon-arrow.svg' | asset_url }}"
+            alt="Wishlist"
+            width="24"
+            height="24">
+        </div>
+        <div class="deliver-time">
+          <img
+            src="{{ 'icon-return.svg' | asset_url }}"
+            alt="Wishlist"
+            width="24"
+            height="24">
+          <p>14 Tage Rückgabeservice</p>
+          <img
+            src="{{ 'icon-arrow.svg' | asset_url }}"
+            alt="Wishlist"
+            width="24"
+            height="24">
+        </div>
       </div>
     </div>
   </div>
