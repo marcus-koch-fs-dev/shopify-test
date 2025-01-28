@@ -4,31 +4,8 @@
 
 <section class="product-details">
   <!-- Left Section: Image Gallery -->
-  <div class="image-gallery">
-    {% assign orientation = section.settings.orientation %}
-    {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
-    {% if orientation %}
-      <div class="image-list--horizontal">
-        {% render 'product-media-gallery'
-          , variant_images: variant_images %}
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
-    {% else %}
-      <div class="image-list--vertical">
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-        {% render 'product-media-gallery'
-          , variant_images: variant_images %}
-      </div>
-    {% endif %}
-  </div>
+  {% render 'product-gallery' %}
+
 
   <!-- Right Section: Product Details -->
   <div class="buybox">

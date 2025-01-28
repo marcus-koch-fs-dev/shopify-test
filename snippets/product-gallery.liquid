@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="{{ 'product-gallery.css' | asset_url }}">
+
+
+<div class="product-gallery">
+  {% assign gallery = product.images %}
+  <ul class="product-gallery__list">
+    {% for image in gallery %}
+      {% if forloop.index < 3 %}
+        {% continue %}
+        <!-- Überspringt das erste Bild -->
+      {% endif %}
+      <li class="product-gallery__item">
+        <img
+          class="product-gallery__item-img"
+          src="{{ image | img_url }}"
+          alt="{{ image.alt | escape }}"
+          width="100%"
+          height="auto">
+      </li>
+    {% endfor %}
+    <img
+      class="product-gallery__btn-next"
+      src="{{ 'icon-angle-up.svg' | asset_url }}"
+      alt="Next"
+      width="24"
+      height="24">
+  </ul>
+  <div class="product-gallery__stage-wrapper">
+    <img
+      class="product-gallery__stage"
+      src="{{ gallery[0] | img_url }}"
+      alt="{{ gallery[0].alt | escape }}"
+      width="100%"
+      height="auto">
+
+    <img
+      class="product-gallery__btn-zoom"
+      src="{{ 'icon-zoom.svg' | asset_url }}"
+      alt="Zoom"
+      width="24"
+      height="24">
+  </div>
+</div>

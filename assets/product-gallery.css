@@ -1,0 +1,38 @@
+.product-gallery {
+  display: flex;
+}
+.product-gallery__list {
+  margin-right: 24px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.product-gallery__item {
+  gap: 12px;
+}
+
+.product-gallery__item-img {
+  height: 60px;
+  width: 60px;
+}
+
+.product-gallery__stage-wrapper {
+  position: relative;
+  flex-shrink: 1;
+}
+
+.product-gallery__stage {
+  height: 604px;
+  width: 604px;
+}
+
+.product-gallery__btn-next {
+  height: 40px;
+  width: 40px;
+}
+
+.product-gallery__btn-zoom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

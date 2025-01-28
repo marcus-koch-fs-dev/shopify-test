@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/assets/1_product-buybox.css">
+
+
+<section class="image-gallery">
+  <div class="product-details__image-gallery">
+  {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
+    <!-- Linke Hälfte: Bild-Stage -->
+    {% render 'product-media-gallery'
+      , variant_images: variant_images %}
+  {% comment %} {% when 'image-gallery' %} {% endcomment %}
+  {% comment %} {% case block.type %}
+            {% endcase %} {% endcomment %}
+  {% comment %} {% for block in section.blocks.settings %}
+              {% endfor %} {% endcomment %}
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "image-gallery",
+    "blocks": [],
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "brand_logo",
+        "label": "Brand Logo"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image Gallery"
+      }
+    ]
+  }
+{% endschema %}
