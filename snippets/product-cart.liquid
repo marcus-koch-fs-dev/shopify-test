@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="{{ 'product-cart.css' | asset_url }}">
+<!-- Cart Actions -->
+<div class="cart-action">
+  {% assign is_out = section.settings.out-of-stock %}
+
+  <div class="product-counter {% if is_out %} cart-button__out {% endif %}">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="product-counter__icon-decrease"
+      fill="none"
+      class="icon icon-minus"
+      viewBox="0 0 10 2"><path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M.5 1C.5.7.7.5 1 .5h8a.5.5 0 1 1 0 1H1A.5.5 0 0 1 .5 1"
+        clip-rule="evenodd" /></svg>
+    <span class="product-counter__quantity">{{ section.settings.quantity }}</span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="product-counter__icon-increase"
+      fill="none"
+      class="icon icon-plus"
+      viewBox="0 0 10 10"><path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M1 4.51a.5.5 0 0 0 0 1h3.5l.01 3.5a.5.5 0 0 0 1-.01V5.5l3.5-.01a.5.5 0 0 0-.01-1H5.5L5.49.99a.5.5 0 0 0-1 .01v3.5l-3.5.01z"
+        clip-rule="evenodd" /></svg>
+  </div>
+
+  <div class="cart-fav-box">
+    <button type="submit" class="cart-button__submit  {% if is_out %} cart-button__out {% endif %}  ">
+      <div class="cart-button__text-wrapper">
+        <span class="cart-button__text">In den Warenkorb</span>
+        <svg
+          class="cart-button__icon-cart"
+          width="auto"
+          height="auto"
+          viewBox="0 0 17 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M2.40759 4.90845L2.62268e-07 4.90845L0 3.40845L2.96296 3.40845L3.51834 3.40845L3.68034 3.93966L5.55537 10.0878L12.7639 10.0878L14.6109 3.46482L16.0558 3.86777L14.0558 11.0393L13.9028 11.5878L13.3333 11.5878L5 11.5878L4.44463 11.5878L4.28262 11.0566L2.40759 4.90845ZM14.6667 14.3335C14.6667 15.2539 13.9205 16 13 16C12.0795 16 11.3333 15.2539 11.3333 14.3335C11.3333 13.4131 12.0795 12.6669 13 12.6669C13.9205 12.6669 14.6667 13.4131 14.6667 14.3335ZM5.66667 16C6.58714 16 7.33333 15.2539 7.33333 14.3335C7.33333 13.4131 6.58714 12.6669 5.66667 12.6669C4.74619 12.6669 4 13.4131 4 14.3335C4 15.2539 4.74619 16 5.66667 16Z"
+            fill="white" />
+        </svg>
+      </div>
+    </button>
+    <div class="cart-message {% if is_out %} cart-button__out {% endif %}">
+      <span class="cart-message__text">Benachrichtigen, wenn verfügbar</span>
+    </div>
+
+
+    <div class="fav-button" onclick="()=>{console.log('clicked')}">
+      <svg
+        class="fav-button__icon-heart"
+        width="auto"
+        height="auto"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 22C12 22 22.5 14.5749 22.5 7.54815C22.5 0.521375 13.184 -0.0194266 12 7.00826C10.816 -0.0194266 1.5 0.521375 1.5 8.08895C1.5 15.6565 12 22 12 22Z"
+          stroke="#0A1119"
+          stroke-width="1.75"
+          stroke-linejoin="round" />
+      </svg>
+
+    </div>
+
+  </div>
+</div>

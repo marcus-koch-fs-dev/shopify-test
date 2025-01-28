@@ -1,13 +1,11 @@
 <link rel="stylesheet" href="{{ 'product-details.css' | asset_url }}">
 <script src="{{ 'product-details.js' | asset_url }}" defer="defer"></script>
 
-
 <section class="product-details">
-  <!-- Left Section: Image Gallery -->
+  <!-- Left Section -->
   {% render 'product-gallery' %}
 
-
-  <!-- Right Section: Product Details -->
+  <!-- Right Section -->
   <div class="user-action">
     <div class="buybox">
       {% render 'product-highlights'
@@ -34,44 +32,9 @@
         , rating_stars: section.settings.show_energy_label
       %}
 
+      {% render 'product-cart'
+        , section.settings.out-of-stock %}
 
-      <!-- Cart Actions -->
-      <div class="cart-action">
-        <form action="" method="post">
-          <div class="product-counter">
-            <button type="button" class="product-counter--decrease">
-              <img
-                src="{{ 'icon-minus.svg' | asset_url }}"
-                alt="Decrease"
-                width="24"
-                height="24">
-            </button>
-            <span class="product-counter--cart">{{ section.settings.quantity }}</span>
-            <button type="button" class="product-counter--increase">
-              <img
-                src="{{ 'icon-plus.svg' | asset_url }}"
-                alt="Increase"
-                width="24"
-                height="24">
-            </button>
-          </div>
-          <button type="submit" class="cart-action--submit">
-            <img
-              src="{{ 'icon-cart.svg' | asset_url }}"
-              alt="Cart"
-              width="24"
-              height="24">
-            <span>In den Warenkorb</span>
-          </button>
-          <button type="button" class="cart-action--wishlist">
-            <img
-              src="{{ 'icon-heart.svg' | asset_url }}"
-              alt="Wishlist"
-              width="24"
-              height="24">
-          </button>
-        </form>
-      </div>
 
       <!-- Delivery and Retour -->
       <div class="delivery-retour">
@@ -213,6 +176,12 @@
         "id": "show_energy_label",
         "label": "Show Energy Label",
         "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "out-of-stock",
+        "label": "Product is out of stock",
+        "default": false
       },
       {
         "type": "image_picker",

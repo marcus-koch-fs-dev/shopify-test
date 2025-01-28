@@ -1,13 +1,10 @@
 .product-details {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
 }
 
 .user-action {
-  display: flex;
-  flex-shrink: 0;
   padding: 0 24px;
 }
 
@@ -18,4 +15,7 @@
 
 /* Responsive Ansicht: untereinander anordnen */
 @media (max-width: 768px) {
+  .product-details {
+    flex-wrap: wrap;
+  }
 }

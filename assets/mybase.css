@@ -6,13 +6,14 @@
   --colors_dark-grey: #46494e;
   --colors_medium-grey: #838487;
   --colors_light-grey: #c0bebe;
+  --colors_off-grey: #f4f1ef;
   /* --colors_light-grey: firebrick; */
   --colors_near-black: #0a1119;
   --colors_sun-up: #ffbf00;
   --colors_sun-down: #ff6633;
   --colors_semantic-price: #db1420;
   --colors_green: #008c51;
-  --colors_off-grey: #f4f1ef;
+  --colors_basic-white: #ffffff;
 
   /* Responsive Display Size */
   --max-width-tablet: 768px;
@@ -22,7 +23,7 @@ span {
   font-size: 14px;
   font-weight: 400;
   font-family: var(--font-family_poppins);
-  color: var(--colors_dark-grey);
+  /* color: var(--colors_dark-grey); */
   line-height: 20px;
 }
 

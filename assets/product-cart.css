@@ -1,0 +1,154 @@
+.cart-action {
+  display: grid;
+  gap: 12px;
+  grid-template-areas: 'qty cart';
+  justify-content: start;
+}
+
+/* Button for the amount */
+.product-counter {
+  grid-area: qty;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--colors_light-grey);
+  gap: 10px;
+  padding: 0 12px;
+  height: 60px;
+  max-width: 110px;
+}
+
+.product-counter__icon-decrease {
+  width: 24px;
+  height: 24px;
+  color: var(--colors_light-grey);
+}
+
+.product-counter__icon-decrease:hover {
+  cursor: pointer;
+}
+
+.product-counter__quantity {
+  text-align: center;
+  width: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--colors_dark-grey);
+}
+
+.product-counter__icon-increase {
+  width: 24px;
+  height: 24px;
+  color: var(--colors_near-black);
+}
+.product-counter__icon-increase:hover {
+  cursor: pointer;
+}
+
+.product-counter.cart-button__out {
+  display: none;
+}
+
+/* Cart and Heart icon */
+.cart-fav-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 60px;
+}
+
+.cart-button__submit {
+  grid-area: cart;
+  background-color: var(--colors_sun-down);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-width: 350px;
+}
+.cart-button__text-wrapper {
+  display: flex;
+  align-items: center;
+}
+.cart-button__text,
+.cart-message__text {
+  color: var(--colors_basic-white);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.cart-button__icon-cart {
+  color: var(--colors_basic-white);
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+}
+
+.cart-button__submit.cart-button__out {
+  display: none;
+}
+
+/* Our of stock */
+.cart-message {
+  display: none;
+}
+
+.cart-message.cart-button__out {
+  grid-area: cart;
+  background-color: var(--colors_near-black);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-width: 350px;
+}
+
+/* Icon-Button */
+.fav-button {
+  border-radius: 50%;
+  border: 2px solid var(--colors_near-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+}
+
+.fav-button__icon-heart {
+  fill: none;
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 768px) {
+  .cart-action {
+    grid-template-areas:
+      'qty'
+      'cart';
+    gap: 0;
+  }
+  .product-counter {
+    justify-content: space-between;
+    max-width: none;
+  }
+  .cart-button__submit {
+    flex-grow: 1;
+  }
+  .product-counter__quantity {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 425px) {
+  .cart-button__submit {
+    flex-grow: 1;
+  }
+  .cart-button__text {
+    display: none;
+  }
+}
