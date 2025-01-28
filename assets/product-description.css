@@ -1,0 +1,19 @@
+.description {
+  display: flex;
+}
+
+.description__list {
+  list-style: disc;
+  padding-left: 25px;
+}
+
+.description__item {
+  line-height: 30px;
+}
+
+.description__text {
+  color: var(--colors_near-black);
+  font-family: var(--font-family_poppins);
+  font-size: 16px;
+  font-weight: 400;
+}

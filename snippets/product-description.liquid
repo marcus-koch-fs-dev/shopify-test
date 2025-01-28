@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="{{ 'product-description.css' | asset_url }}">
+
+<!-- List Descriptions -->
+<div class="description">
+  <ul class="description__list">
+    {% assign info_list = product.metafields.custom.info-list | split: ";;" %}
+    {% for item in info_list %}
+      <li class="description__item">
+        <p class="description__text">
+          {{ item }}
+        </p>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

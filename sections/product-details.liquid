@@ -24,10 +24,7 @@
       , offensive_title: section.settings.bold-title
       , show_brand: section.settings.show_brand-logo
     %}
-    <!-- Extra Info - Metainfo -->
-    <p class="description">
-      {{ section.settings.prodDescription }}
-    </p>
+    {% render 'product-description' %}
 
     {% render 'product-options'
       , rating_stars: section.settings.show-variations
