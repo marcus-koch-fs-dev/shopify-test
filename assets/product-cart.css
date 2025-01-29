@@ -66,7 +66,7 @@
   justify-content: center;
   height: 100%;
   min-width: 350px;
-  box-shadow: 0 20px 40px var(--colors_sun-down);
+  box-shadow: 0 20px 40px -20px var(--colors_sun-down);
 }
 .cart-button__text-wrapper {
   display: flex;
