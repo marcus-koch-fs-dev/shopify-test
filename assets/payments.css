@@ -10,9 +10,17 @@
 .payments__list {
   margin-top: 8px;
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
 }
 .payments__item {
 }
 .payments__img {
+}
+
+@media (max-width: 768px) {
+  .payments {
+    border: none;
+    padding: 12px 20px;
+  }
 }

@@ -1,6 +1,9 @@
 .service {
   padding: 12px 48px;
   background-color: var(--colors_off-white);
+  display: flex;
+  align-items: center;
+  height: 70px;
 }
 
 .service__div {
@@ -35,4 +38,10 @@
 
 .service__text {
   color: var(--colors_near-black);
+}
+
+@media (max-width: 768px) {
+  .service {
+    padding: 12px 20px;
+  }
 }

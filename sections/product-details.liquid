@@ -3,47 +3,60 @@
 
 <section class="product-details">
   <!-- Left Section -->
-  {% render 'product-gallery' %}
+  <div class="gallery">
+    {% render 'product-gallery' %}
+  </div>
 
   <!-- Right Section -->
   <div class="user-action">
     <div class="buybox">
-      {% render 'product-highlights'
-        , discountOffer: section.settings.discountOffer
-        , express: section.settings.express
-      %}
-
-      {% render 'product-info'
-        , rating_stars: section.settings.rating_stars 
-        , feedbackNo: section.settings.feedbackNo
-        , show_artNo: section.settings.show_artNo
-        , artNo: section.settings.artNo
-        , show-favorite: section.settings.show-favorite 
-        , offensive_title: section.settings.bold-title
-        , show_brand: section.settings.show_brand-logo
-      %}
-      {% render 'product-description' %}
-
-      {% render 'product-options'
-        , rating_stars: section.settings.show-variations
-      %}
-
-      {% render 'product-price'
-        , rating_stars: section.settings.show_energy_label
-        , discountOffer: section.settings.discountOffer
-      %}
-
-      {% render 'product-cart'
-        , out-of-stock: section.settings.out-of-stock %}
-
-      {% render 'product-transport'
-        , express: section.settings.express
-        , out-of-stock: section.settings.out-of-stock %}
-
+      <div class="buybox__highlights">
+        {% render 'product-highlights'
+          , discountOffer: section.settings.discountOffer
+          , express: section.settings.express
+        %}
+      </div>
+      <div class="buybox__product-info">
+        {% render 'product-info'
+          , rating_stars: section.settings.rating_stars 
+          , feedbackNo: section.settings.feedbackNo
+          , show_artNo: section.settings.show_artNo
+          , artNo: section.settings.artNo
+          , show-favorite: section.settings.show-favorite 
+          , offensive_title: section.settings.bold-title
+          , show_brand: section.settings.show_brand-logo
+        %}
+      </div>
+      <div class="buybox__description">
+        {% render 'product-description' %}
+      </div>
+      <div class="buybox__product-options">
+        {% render 'product-options'
+          , rating_stars: section.settings.show-variations
+        %}
+      </div>
+      <div class="buybox__product-price">
+        {% render 'product-price'
+          , rating_stars: section.settings.show_energy_label
+          , discountOffer: section.settings.discountOffer
+        %}
+      </div>
+      <div class="buybox__product-cart">
+        {% render 'product-cart'
+          , out-of-stock: section.settings.out-of-stock %}
+      </div>
+      <div class="buybox__product-transport">
+        {% render 'product-transport'
+          , express: section.settings.express
+          , out-of-stock: section.settings.out-of-stock %}
+      </div>
     </div>
-    {% render 'payments' %}
-    {% render 'service-options' %}
-
+    <div class="payments-wrapper">
+      {% render 'payments' %}
+    </div>
+    <div class="service-options">
+      {% render 'service-options' %}
+    </div>
   </div>
 </section>
 
