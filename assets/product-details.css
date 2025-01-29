@@ -1,5 +1,5 @@
 .product-details {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   gap: 24px;
 }
@@ -17,5 +17,6 @@
 @media (max-width: 768px) {
   .product-details {
     flex-wrap: wrap;
+    padding: 24px 20px 20px 20px;
   }
 }

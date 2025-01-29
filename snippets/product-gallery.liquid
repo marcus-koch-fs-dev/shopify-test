@@ -25,19 +25,20 @@
       width="24"
       height="24">
   </ul>
-  <div class="product-gallery__stage-wrapper">
-    <img
-      class="product-gallery__stage"
-      src="{{ gallery[0] | img_url }}"
-      alt="{{ gallery[0].alt | escape }}"
-      width="100%"
-      height="auto">
-
-    <img
-      class="product-gallery__btn-zoom"
-      src="{{ 'icon-zoom.svg' | asset_url }}"
-      alt="Zoom"
-      width="24"
-      height="24">
+  <div class="product-gallery__position">
+    <div class="product-gallery__stage-wrapper">
+      <img
+        class="product-gallery__stage"
+        src="{{ gallery[0] | img_url }}"
+        alt="{{ gallery[0].alt | escape }}"
+        width="100%"
+        height="auto">
+      <img
+        class="product-gallery__btn-zoom"
+        src="{{ 'icon-zoom.svg' | asset_url }}"
+        alt="Zoom"
+        width="24"
+        height="24">
+    </div>
   </div>
 </div>
