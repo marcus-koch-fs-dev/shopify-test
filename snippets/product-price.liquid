@@ -31,11 +31,7 @@
             width="100%"
             height="auto">
         </div>
-        <a
-          href="https://www.google.com/"
-          download="example.pdf"
-          target="_blank"
-          rel="noopener noreferrer">
+        <a href="{{ product.metafields.custom.product_datasheet |  file_url  }}" download>
           <span class="energy-label__text">Produktdatenblatt</span>
         </a>
       </div>
