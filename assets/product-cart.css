@@ -1,7 +1,6 @@
 .cart-action {
-  display: grid;
+  display: flex;
   gap: 12px;
-  grid-template-areas: 'qty cart';
   justify-content: start;
 }
 
@@ -128,10 +127,12 @@
 
 @media (max-width: 768px) {
   .cart-action {
+    display: grid;
     grid-template-areas:
       'qty'
       'cart';
     gap: 0;
+    justify-content: stretch;
   }
   .product-counter {
     justify-content: space-between;
