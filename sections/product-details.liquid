@@ -33,52 +33,13 @@
       %}
 
       {% render 'product-cart'
-        , section.settings.out-of-stock %}
+        , out-of-stock: section.settings.out-of-stock %}
+
+      {% render 'product-transport'
+        , express: section.settings.express
+        , out-of-stock: section.settings.out-of-stock %}
 
 
-      <!-- Delivery and Retour -->
-      <div class="delivery-retour">
-        <p class="delivery-retour--text"></p>
-        <div class="deliver-time">
-          <img
-            src="{{ 'icon-tick.svg' | asset_url }}"
-            alt="Wishlist"
-            width="24"
-            height="24">
-          <p>Lieferbar in 3 Tagen</p>
-          <img
-            src="{{ 'icon-arrow.svg' | asset_url }}"
-            alt="Wishlist"
-            width="24"
-            height="24">
-        </div>
-        <div class="deliver-cost">
-          <img
-            src="{{ 'icon-truck.svg' | asset_url }}"
-            alt="Wishlist"
-            width="24"
-            height="24">
-          <p>Kostenloser Versand</p>
-          <img
-            src="{{ 'icon-arrow.svg' | asset_url }}"
-            alt="Wishlist"
-            width="24"
-            height="24">
-        </div>
-        <div class="deliver-time">
-          <img
-            src="{{ 'icon-return.svg' | asset_url }}"
-            alt="Wishlist"
-            width="24"
-            height="24">
-          <p>14 Tage Rückgabeservice</p>
-          <img
-            src="{{ 'icon-arrow.svg' | asset_url }}"
-            alt="Wishlist"
-            width="24"
-            height="24">
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -197,33 +158,3 @@
     ]
   }
 {% endschema %}
-
-// {
-      //   "type": "text",
-      //   "id": "rating_stars",
-      //   "label": "Star Rating (1-5)",
-      //   "default": "5"
-      // },
-      // {
-      //   "type": "text",
-      //   "id": "feedbackNo",
-      //   "label": "Feedback Count",
-      //   "default": "89"
-      // },
-      // {
-      //   "type": "text",
-      //   "id": "artNo",
-      //   "label": "Article Number",
-      //   "default": "GH-3434"
-      // },
-      // {
-      //   "type": "text",
-      //   "id": "titel",
-      //   "label": "Product Title",
-      //   "default": "Default Title"
-      // },
-      // {
-      //   "type": "image_picker",
-      //   "id": "brand_logo",
-      //   "label": "Brand Logo"
-      // },

@@ -1,0 +1,101 @@
+<link rel="stylesheet" href="{{ 'product-transport.css' | asset_url }}">
+
+<!-- Delivery and Retour -->
+<div class="transport">
+  {% assign is_out = section.settings.out-of-stock %}
+  {% assign express = section.settings.express %}
+
+  <p class="transport__p">Versand und Rückgabe</p>
+  <ul class="transport__list">
+    <li class="transport__item">
+      <div class="transport__item-left">
+        <svg
+          class="transport__svg icon-dot {% if is_out %} out {% endif %}"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M7.33334 12C7.33334 13.2377 7.82501 14.4247 8.70018 15.2999C9.57535 16.175 10.7623 16.6667 12 16.6667C13.2377 16.6667 14.4247 16.175 15.2998 15.2999C16.175 14.4247 16.6667 13.2377 16.6667 12C16.6667 10.7624 16.175 9.57538 15.2998 8.70021C14.4247 7.82504 13.2377 7.33337 12 7.33337C10.7623 7.33337 9.57535 7.82504 8.70018 8.70021C7.82501 9.57538 7.33334 10.7624 7.33334 12Z" />
+        </svg>
+
+        {% if express and is_out == false %}
+          <ul class="express__list">
+            <li class="express_item">
+              <p class="express__p">Sofort Lieferbar. 1 - 2 Werktagen</p>
+            </li>
+            <li class="express_item text-top">
+              <span class="express__text">Für Bestellungen, die bis 14 Uhr eingehen</span>
+            </li>
+          </ul>
+        {% else %}
+          <span class="transport__text">Lieferbar in 4 - 7 Werktagen</span>
+        {% endif %}
+
+      </div>
+      <svg
+        class="transport__svg icon-arrow"
+        width="17"
+        height="18"
+        viewBox="0 0 17 18"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M15.8636 8.46965L8.19698 0.802983L7.13632 1.86364L13.5227 8.24998L-1.56948e-05 8.24998L-1.53014e-05 9.74998L13.5781 9.74998L7.458 16.1482L8.54197 17.1851L15.8753 9.51839L16.3823 8.98832L15.8636 8.46965Z"
+          fill="#0A1119" />
+      </svg>
+    </li>
+
+    <li class="transport__item">
+      <div class="transport__item-left">
+        <img
+          class="transport__img"
+          src="{{ 'icon-truck2.svg' | asset_url }}"
+          alt="Delivery"
+          width="24"
+          height="24">
+        <span class="transport__text">Versand ab 7,99€</span>
+      </div>
+      <svg
+        class="transport__svg icon-arrow"
+        width="17"
+        height="18"
+        viewBox="0 0 17 18"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M15.8636 8.46965L8.19698 0.802983L7.13632 1.86364L13.5227 8.24998L-1.56948e-05 8.24998L-1.53014e-05 9.74998L13.5781 9.74998L7.458 16.1482L8.54197 17.1851L15.8753 9.51839L16.3823 8.98832L15.8636 8.46965Z"
+          fill="#0A1119" />
+      </svg>
+    </li>
+
+    <li class="transport__item">
+      <div class="transport__item-left">
+        <img
+          class="transport__img"
+          src="{{ 'icon-retour.svg' | asset_url }}"
+          alt="Retour"
+          width="24"
+          height="24">
+        <span class="transport__text">14 Tage Rückgabeservice</span>
+      </div>
+      <svg
+        class="transport__svg icon-arrow"
+        width="17"
+        height="18"
+        viewBox="0 0 17 18"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M15.8636 8.46965L8.19698 0.802983L7.13632 1.86364L13.5227 8.24998L-1.56948e-05 8.24998L-1.53014e-05 9.74998L13.5781 9.74998L7.458 16.1482L8.54197 17.1851L15.8753 9.51839L16.3823 8.98832L15.8636 8.46965Z"
+          fill="#0A1119" />
+      </svg>
+    </li>
+  </ul>
+</div>
