@@ -41,4 +41,15 @@
         height="24">
     </div>
   </div>
+
+  <ul class="horizontal__list">
+    {% for image in gallery %}
+      {% if forloop.index < 3 %}
+        {% continue %}
+      {% endif %}
+      <li class="horizontal__item">
+        {% comment %} <span class="horizontal__indicatator"></span> {% endcomment %}
+      </li>
+    {% endfor %}
+  </ul>
 </div>

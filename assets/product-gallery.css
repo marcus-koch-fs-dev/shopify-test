@@ -1,14 +1,14 @@
 .product-gallery {
   display: flex;
   max-width: 688px;
-  max-height: 700px;
-  gap: 24px;
+  overflow: hidden;
 }
 
 .product-gallery__list {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-right: 24px;
 }
 .product-gallery__item {
   gap: 12px;
@@ -20,6 +20,22 @@
 .product-gallery__btn-next {
   height: 40px;
   width: 40px;
+}
+
+.horizontal__list {
+  background-color: var(--colors_off-grey);
+  border-radius: 4px;
+  display: none;
+  margin-top: 24px;
+  overflow: hidden;
+  width: 604px;
+}
+.horizontal__item {
+  height: 4px;
+  width: 70px;
+}
+.horizontal__item:first-child {
+  background-color: var(--colors_light-grey);
 }
 
 .product-gallery__position {
@@ -43,9 +59,14 @@
 @media (max-width: 768px) {
   .product-gallery {
     gap: 0px;
+    flex-direction: column;
   }
 
   .product-gallery__list {
     display: none;
+  }
+
+  .horizontal__list {
+    display: flex;
   }
 }
