@@ -1,5 +1,3 @@
-@import url(mybase.css);
-
 .price-energy {
   display: grid;
   grid-template-areas: 'pric engy';
@@ -10,7 +8,7 @@
   grid-area: pric;
 }
 
-.price__regular {
+.price__compare {
   height: 30px;
   text-decoration: line-through;
 }
@@ -20,7 +18,10 @@
   align-items: center;
   gap: 12px;
 }
-
+.discount__regular {
+  color: var(--colors_near-black);
+  margin-top: 30px;
+}
 .discount__offer {
   color: var(--colors_semantic-price);
   border: solid 1px var(--colors_semantic-price);

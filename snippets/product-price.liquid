@@ -1,19 +1,27 @@
 <link rel="stylesheet" href="{{ 'product-price.css' | asset_url }}">
 
 <!-- Price Section -->
+
 <div class="price-energy">
+  {% assign is_discount = section.settings.discountOffer %}
+  {% assign show_label = section.settings.show_energy_label %}
+
   <div class="price">
-    <h5 class="price__regular">699,99€</h5>
-    <div class="discount">
-      <h3 class="discount__price">199,99€</h3>
-      <span class="discount__offer">-35%</span>
-    </div>
+    {% if is_discount %}
+      <h5 class="price__compare">699,99€</h5>
+      <div class="discount">
+        <h3 class="discount__offer-price">499,99€</h3>
+        <span class="discount__offer">-35%</span>
+      </div>
+    {% else %}
+      <h3 class="discount__regular">499,99€</h3>
+    {% endif %}
     <div class="tax">
       <span class="tax__price">355€</span>
       <span class="tax__info">&nbsp;inkl. Mwst, zzgl. Versand</span>
     </div>
   </div>
-  {% if section.settings.show_energy_label %}
+  {% if show_label %}
     <div class="energy">
       <div class="wrapper">
         <div class="energy-label">
@@ -28,7 +36,7 @@
           download="example.pdf"
           target="_blank"
           rel="noopener noreferrer">
-          <span class="energy-label__text">{{ section.settings.energy_label_text }}</span>
+          <span class="energy-label__text">Produktdatenblatt</span>
         </a>
       </div>
     </div>
