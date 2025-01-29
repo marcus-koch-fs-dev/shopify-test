@@ -54,12 +54,12 @@
   margin-right: 12px;
 }
 
-.transport__svg.icon-arrow {
+.drawer__svg.icon-arrow {
   width: 16px;
   height: 16px;
 }
 
-.transport__svg.icon-arrow:hover {
+.drawer__svg.icon-arrow:hover {
   cursor: pointer;
 }
 

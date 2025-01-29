@@ -1,7 +1,10 @@
 <link rel="stylesheet" href="{{ 'product-details.css' | asset_url }}">
 <script src="{{ 'product-details.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-transport.js' | asset_url }}" defer="defer"></script>
 
 <section class="product-details">
+
+  {% render 'drawer' %}
   <!-- Left Section -->
   <div class="gallery">
     {% render 'product-gallery' %}
