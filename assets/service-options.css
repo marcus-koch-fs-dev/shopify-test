@@ -1,0 +1,38 @@
+.service {
+  padding: 12px 48px;
+  background-color: var(--colors_off-white);
+}
+
+.service__div {
+  display: flex;
+  align-items: center;
+}
+
+.service__img-frame {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  background-color: var(--colors_sun-up);
+  overflow: hidden;
+  position: relative;
+  margin-right: 8px;
+}
+
+.service__img {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: -13px;
+}
+
+.service__text-wrapper {
+}
+
+.service__text--bold {
+  font-weight: 700;
+  color: var(--colors_near-black);
+}
+
+.service__text {
+  color: var(--colors_near-black);
+}
