@@ -119,6 +119,10 @@
   cursor: pointer;
 }
 
+.fav-button:active .fav-button__icon-heart {
+  fill: red;
+}
+
 .fav-button__icon-heart {
   fill: none;
   width: 24px;
