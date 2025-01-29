@@ -1,0 +1,18 @@
+.payments {
+  padding: 12px 48px;
+  border: solid 2px var(--colors_off-grey);
+}
+
+.payments__p {
+  height: 30px;
+}
+
+.payments__list {
+  margin-top: 8px;
+  display: flex;
+  gap: 30px;
+}
+.payments__item {
+}
+.payments__img {
+}
