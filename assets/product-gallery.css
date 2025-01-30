@@ -3,6 +3,8 @@
   max-width: 688px;
   overflow: hidden;
   flex-grow: 1;
+  gap: 24px; /* Standardabstand */
+  /* border: yellowgreen 2px solid; */
 }
 
 .product-gallery__list {
@@ -57,10 +59,31 @@
   right: 0;
 }
 
+/* ✅ Tablet-Ansicht (bis 1024px) */
+@media (max-width: 1024px) {
+  .product-gallery__list {
+    flex-direction: column;
+    margin-right: 0;
+    gap: 8px;
+  }
+
+  .product-gallery__item-img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .horizontal__list {
+    width: 90%;
+  }
+}
+
+/* ✅ Mobile-Ansicht (bis 768px) */
 @media (max-width: 768px) {
   .product-gallery {
-    gap: 0px;
     flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    max-width: 100%;
   }
 
   .product-gallery__list {
@@ -69,5 +92,27 @@
 
   .horizontal__list {
     display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .product-gallery__stage-wrapper {
+    max-width: 90%;
+    max-height: auto;
+  }
+}
+
+/* ✅ Kleinere Smartphones (bis 425px) */
+@media (max-width: 425px) {
+  .horizontal__list {
+  }
+
+  .horizontal__item {
+    width: 50px;
+  }
+
+  .product-gallery__stage-wrapper {
+    max-width: 100%;
+    padding: 0 10px;
   }
 }
