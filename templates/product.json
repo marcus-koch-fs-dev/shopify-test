@@ -8,20 +8,24 @@
  * ------------------------------------------------------------
  */
 
-{
-  "sections": {
-    "product-details": {
-      "type": "product-details",
+ {
+   "sections": {
+     "product-details": {
+       "type": "product-details",
       "settings": {
-        // "rating_stars": "5",
-        // "feedbackNo": "123",
-        // "artNo": "GH-3434",
-        // "titel": "Produkt Titel",
-        // "prodDescription": "Produktbeschreibung",
-        // "brand_logo": null
+        "discountOffer": false,
+        "express": true,
+        "rating_stars": "5",
+        "show_artNo": true,
+        "show-favorite": true,
+        "titel": "Dito Sama Prep4You Kutter 3,6l",
+        "bold-title": true,
+        "show_brand-logo": true,
+        "show-variations": true,
+        "show_energy_label": true,
+        "out-of-stock": false
       }
-    },
-    
+    }
   },
   "order": ["product-details"]
 }

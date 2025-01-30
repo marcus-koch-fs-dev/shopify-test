@@ -22,9 +22,7 @@
       <div class="buybox__product-info">
         {% render 'product-info'
           , rating_stars: section.settings.rating_stars 
-          , feedbackNo: section.settings.feedbackNo
           , show_artNo: section.settings.show_artNo
-          , artNo: section.settings.artNo
           , show-favorite: section.settings.show-favorite 
           , offensive_title: section.settings.bold-title
           , show_brand: section.settings.show_brand-logo
@@ -76,13 +74,13 @@
       {
         "type": "checkbox",
         "id": "discountOffer",
-        "label": "Enable Discount Display",
+        "label": "Enable Discount",
         "default": false
       },
       {
         "type": "checkbox",
         "id": "express",
-        "label": "Enable Express Delivery",
+        "label": "Enable Express",
         "default": true
       },
       {
@@ -92,22 +90,10 @@
         "default": "5"
       },
       {
-        "type": "text",
-        "id": "feedbackNo",
-        "label": "Number of Feedbacks",
-        "default": "44"
-      },
-      {
         "type": "checkbox",
         "id": "show_artNo",
         "label": "Show Article Number",
         "default": true
-      },
-      {
-        "type": "text",
-        "id": "artNo",
-        "label": "Article Number",
-        "default": "12345"
       },
       {
         "type": "checkbox",
@@ -124,7 +110,7 @@
       {
         "type": "checkbox",
         "id": "bold-title",
-        "label": "Use H5 for Product Title",
+        "label": "Show Bold Product Title",
         "default": true
       },
       {
@@ -134,22 +120,10 @@
         "default": true
       },
       {
-        "type": "textarea",
-        "id": "prodDescription",
-        "label": "Product Description",
-        "default": "Default description for the product."
-      },
-      {
         "type": "checkbox",
         "id": "show-variations",
         "label": "Product Variations",
         "default": true
-      },
-      {
-        "type": "number",
-        "id": "quantity",
-        "label": "Default Quantity",
-        "default": 1
       },
       {
         "type": "checkbox",
@@ -162,17 +136,6 @@
         "id": "out-of-stock",
         "label": "Product is out of stock",
         "default": false
-      },
-      {
-        "type": "image_picker",
-        "id": "energy_label",
-        "label": "Energy Label Image"
-      },
-      {
-        "type": "text",
-        "id": "energy_label_text",
-        "label": "Energy Efficency Label",
-        "default": "Produktdatenblatt"
       }
     ]
   }

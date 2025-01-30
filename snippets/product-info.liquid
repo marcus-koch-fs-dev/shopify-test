@@ -1,20 +1,19 @@
+<link rel="stylesheet" href="{{ 'product-info.css' | asset_url }}">
+
 {% comment %} 
-                                                                                                Usage:
-                                                                                                    {% render 'product-info', 
-                                                                                                rating_stars: section.settings.rating_stars, 
-                                                                                                feedbackNo: section.settings.feedbackNo, 
-                                                                                                show_artNo: section.settings.show_artNo, 
-                                                                                                artNo: section.settings.artNo, 
-                                                                                                showFavorite: section.settings.showFavorite, 
-                                                                                                isFav: section.settings.isFav, 
-                                                                                                titel: section.settings.titel, 
-                                                                                                offensive_title: section.settings.offensive_title, 
-                                                                                                show_brand: section.settings.show_brand, 
-                                                                                      
-                                                                                              %}
+        Usage:
+            {% render 'product-info', 
+        rating_stars: section.settings.rating_stars, 
+        show_artNo: section.settings.show_artNo, 
+        showFavorite: section.settings.showFavorite, 
+        isFav: section.settings.isFav, 
+        titel: section.settings.titel, 
+        offensive_title: section.settings.offensive_title, 
+        show_brand: section.settings.show_brand, 
+
+      %}
  {% endcomment %}
 
-<link rel="stylesheet" href="{{ 'product-info.css' | asset_url }}">
 
 <!-- Ratings and Product Information -->
 <div class="product-info">
@@ -30,12 +29,12 @@
             {% comment %} <span class="star">&#9734;</span> <!-- Ungefüllter Stern --> {% endcomment %}
           {% endfor %}
         {% endif %}
-        <span class="rating__feedback">({{ section.settings.feedbackNo }})</span>
+        <span class="rating__feedback">(89)</span>
       </div>
 
       <div class="product-artno">
         {% if section.settings.show_artNo %}
-          <span class="product-artno__text">Art.-No.: {{ section.settings.artNo }}</span>
+          <span class="product-artno__text">Art.-Nr.: GH-650210</span>
         {% endif %}
       </div>
     </div>
