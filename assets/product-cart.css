@@ -166,7 +166,4 @@
   .cart-button__submit {
     flex-grow: 1;
   }
-  .cart-button__text {
-    display: none;
-  }
 }
