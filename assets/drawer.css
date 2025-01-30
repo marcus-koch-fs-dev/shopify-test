@@ -26,3 +26,30 @@
   font-size: 18px;
   cursor: pointer;
 }
+
+.drawer-content p {
+  font-size: 16;
+  line-height: 30px;
+}
+
+.drawer-content span {
+  display: block;
+  margin-bottom: 8px;
+  line-height: 30px;
+  color: var(--colors_near-black);
+}
+
+.drawer-content ul {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.drawer-content li {
+  list-style-type: disc;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--font-family_poppins);
+  color: var(--colors_near-black);
+  line-height: 30px;
+}
