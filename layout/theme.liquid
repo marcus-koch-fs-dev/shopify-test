@@ -8,6 +8,7 @@
     <link rel="canonical" href="{{ canonical_url }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+
     {%- if settings.favicon != blank -%}
       <link
         rel="icon"
@@ -352,7 +353,10 @@ body {
       if (Shopify.designMode) {
         document.documentElement.classList.add('shopify-design-mode');
       }
-    </script>
+  </script>
+
+    <!-- Override with my classes -->
+    {{ 'mybase.css' | asset_url | stylesheet_tag }}
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
