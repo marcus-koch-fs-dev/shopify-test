@@ -1,17 +1,14 @@
 <link rel="stylesheet" href="{{ 'product-info.css' | asset_url }}">
 
 {% comment %} 
-        Usage:
-            {% render 'product-info', 
+        Usage: {% render 'product-info', 
         rating_stars: section.settings.rating_stars, 
-        show_artNo: section.settings.show_artNo, 
-        showFavorite: section.settings.showFavorite, 
+        show_art-no: section.settings.show_art-no, 
+        show-favorite: section.settings.show-favorite, 
         isFav: section.settings.isFav, 
         titel: section.settings.titel, 
         offensive_title: section.settings.offensive_title, 
-        show_brand: section.settings.show_brand, 
-
-      %}
+        show_brand: section.settings.show_brand,          %}
  {% endcomment %}
 
 
@@ -33,19 +30,28 @@
       </div>
 
       <div class="product-artno">
-        {% if section.settings.show_artNo %}
+        {% if section.settings.show_art-no %}
           <span class="product-artno__text">Art.-Nr.: GH-650210</span>
         {% endif %}
       </div>
     </div>
     {% if section.settings.show-favorite %}
       <div class="favorite">
-        <img
-          class="favorite__icon {% if section.settings.show-favorite %}favorite__icon--active{% endif %}"
-          src="{{ 'icon-heart.svg' | asset_url }}"
-          alt="Favorite Icon"
+        <svg
+          class="favorite__icon"
           width="auto"
-          height="auto">
+          height="auto"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M12 22C12 22 22.5 14.5749 22.5 7.54815C22.5 0.521375 13.184 -0.0194266 12 7.00826C10.816 -0.0194266 1.5 0.521375 1.5 8.08895C1.5 15.6565 12 22 12 22Z"
+            stroke="#0A1119"
+            stroke-width="1.75"
+            stroke-linejoin="round" />
+        </svg>
       </div>
     {% endif %}
   </div>
