@@ -7,9 +7,9 @@
 
   <div class="price">
     {% if is_discount %}
-      <h5 class="price__compare">699,99€</h5>
+      <h5 class="price__compare {% if section.settings.is_atc-bar %} atc {% endif %} ">699,99€</h5>
       <div class="discount">
-        <h3 class="discount__offer-price">499,99€</h3>
+        <h3 class="discount__offer-price {% if section.settings.is_atc-bar %} atc {% endif %}">499,99€</h3>
         {% if section.settings.is_atc-bar == false %}
           <span class="discount__offer">-35%</span>
         {% endif %}

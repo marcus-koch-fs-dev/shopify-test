@@ -2,15 +2,17 @@
   display: grid;
   grid-template-areas: 'pric engy';
 }
-
 .price {
   display: grid;
   grid-area: pric;
 }
-
 .price__compare {
-  height: 30px;
   text-decoration: line-through;
+}
+.price__compare.atc {
+  text-align: start;
+  line-height: 20px;
+  font-size: 14px;
 }
 
 .discount {
@@ -24,6 +26,7 @@
 }
 .discount__regular.atc {
   margin-top: 0;
+  font-size: 20px;
 }
 .discount__offer {
   color: var(--colors_semantic-price);
@@ -31,17 +34,18 @@
   padding: 2px 4px;
   margin: 3px 0;
 }
+.discount__offer-price.atc {
+  font-size: 20px;
+}
 
 .tax {
   display: flex;
   height: 30px;
   align-items: center;
 }
-
 .tax__price {
   color: var(--colors_near-black);
 }
-
 .tax__info {
   color: var(--colors_near-black);
 }

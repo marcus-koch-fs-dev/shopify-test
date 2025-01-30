@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="{{ 'product-details.css' | asset_url }}">
 <script src="{{ 'product-details.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'product-transport.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'sticky-atc-bar.js' | asset_url }}" defer="defer"></script>
 
 <section class="product-details">
 
@@ -61,6 +62,13 @@
       {% render 'service-options' %}
     </div>
   </div>
+
+  {% if section.settings.simulate-content %}
+    <div style="height: 2000px; background: lightgray;">
+      <p style="padding: 20px;">Testbereich zum Scrollen</p>
+    </div>
+  {% endif %}
+
 </section>
 
 {% schema %}
@@ -143,6 +151,12 @@
         "type": "checkbox",
         "id": "out-of-stock",
         "label": "Product is out of stock",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "simulate-content",
+        "label": "Fake Content - ATC-Bar Test",
         "default": false
       }
     ]
