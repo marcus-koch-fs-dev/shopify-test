@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="{{ 'product-price.css' | asset_url }}">
 
 <!-- Price Section -->
-
 <div class="price-energy">
   {% assign is_discount = section.settings.discountOffer %}
   {% assign show_label = section.settings.show_energy_label %}
@@ -11,16 +10,23 @@
       <h5 class="price__compare">699,99€</h5>
       <div class="discount">
         <h3 class="discount__offer-price">499,99€</h3>
-        <span class="discount__offer">-35%</span>
+        {% if section.settings.is_atc-bar == false %}
+          <span class="discount__offer">-35%</span>
+        {% endif %}
       </div>
     {% else %}
-      <h3 class="discount__regular">499,99€</h3>
+      <h3 class="discount__regular {% if section.settings.is_atc-bar %} atc {% endif %}">499,99€</h3>
     {% endif %}
-    <div class="tax">
-      <span class="tax__price">355€</span>
-      <span class="tax__info">&nbsp;inkl. Mwst, zzgl. Versand</span>
-    </div>
+
+    {% if section.settings.is_atc-bar == false %}
+      <div class="tax">
+        <span class="tax__price">355€</span>
+        <span class="tax__info">&nbsp;inkl. Mwst, zzgl. Versand</span>
+      </div>
+    {% endif %}
   </div>
+
+
   {% if show_label %}
     <div class="energy">
       <div class="wrapper">

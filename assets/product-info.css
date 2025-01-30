@@ -1,3 +1,11 @@
+.atc {
+  display: block;
+}
+.product-name__vendor {
+  color: var(--colors_sun-down);
+  text-transform: uppercase;
+}
+
 .product-info__row-one {
   display: flex;
   align-items: center;

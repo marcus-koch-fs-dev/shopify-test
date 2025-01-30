@@ -3,29 +3,31 @@
 <div class="cart-action">
   {% assign is_out = section.settings.out-of-stock %}
 
-  <div class="product-counter {% if is_out %} cart-button__out {% endif %}">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="product-counter__icon-decrease"
-      fill="none"
-      class="icon icon-minus"
-      viewBox="0 0 10 2"><path
-        fill="currentColor"
-        fill-rule="evenodd"
-        d="M.5 1C.5.7.7.5 1 .5h8a.5.5 0 1 1 0 1H1A.5.5 0 0 1 .5 1"
-        clip-rule="evenodd" /></svg>
-    <span class="product-counter__quantity">12</span>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="product-counter__icon-increase"
-      fill="none"
-      class="icon icon-plus"
-      viewBox="0 0 10 10"><path
-        fill="currentColor"
-        fill-rule="evenodd"
-        d="M1 4.51a.5.5 0 0 0 0 1h3.5l.01 3.5a.5.5 0 0 0 1-.01V5.5l3.5-.01a.5.5 0 0 0-.01-1H5.5L5.49.99a.5.5 0 0 0-1 .01v3.5l-3.5.01z"
-        clip-rule="evenodd" /></svg>
-  </div>
+  {% if section.settings.is_atc-bar == false %}
+    <div class="product-counter {% if is_out %} cart-button__out {% endif %}">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="product-counter__icon-decrease"
+        fill="none"
+        class="icon icon-minus"
+        viewBox="0 0 10 2"><path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M.5 1C.5.7.7.5 1 .5h8a.5.5 0 1 1 0 1H1A.5.5 0 0 1 .5 1"
+          clip-rule="evenodd" /></svg>
+      <span class="product-counter__quantity">12</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="product-counter__icon-increase"
+        fill="none"
+        class="icon icon-plus"
+        viewBox="0 0 10 10"><path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M1 4.51a.5.5 0 0 0 0 1h3.5l.01 3.5a.5.5 0 0 0 1-.01V5.5l3.5-.01a.5.5 0 0 0-.01-1H5.5L5.49.99a.5.5 0 0 0-1 .01v3.5l-3.5.01z"
+          clip-rule="evenodd" /></svg>
+    </div>
+  {% endif %}
 
   <div class="cart-fav-box">
     <button type="submit" class="cart-button__submit  {% if is_out %} cart-button__out {% endif %}  ">
@@ -50,25 +52,25 @@
       <span class="cart-message__text">Benachrichtigen, wenn verfügbar</span>
     </div>
 
+    {% if section.settings.is_atc-bar == false %}
+      <div class="fav-button">
+        <svg
+          class="fav-button__icon-heart"
+          width="auto"
+          height="auto"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M12 22C12 22 22.5 14.5749 22.5 7.54815C22.5 0.521375 13.184 -0.0194266 12 7.00826C10.816 -0.0194266 1.5 0.521375 1.5 8.08895C1.5 15.6565 12 22 12 22Z"
+            stroke="#0A1119"
+            stroke-width="1.75"
+            stroke-linejoin="round" />
+        </svg>
 
-    <div class="fav-button">
-      <svg
-        class="fav-button__icon-heart"
-        width="auto"
-        height="auto"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg">
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M12 22C12 22 22.5 14.5749 22.5 7.54815C22.5 0.521375 13.184 -0.0194266 12 7.00826C10.816 -0.0194266 1.5 0.521375 1.5 8.08895C1.5 15.6565 12 22 12 22Z"
-          stroke="#0A1119"
-          stroke-width="1.75"
-          stroke-linejoin="round" />
-      </svg>
-
-    </div>
-
+      </div>
+    {% endif %}
   </div>
 </div>

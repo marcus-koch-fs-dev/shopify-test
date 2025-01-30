@@ -21,6 +21,7 @@
       </div>
       <div class="buybox__product-info">
         {% render 'product-info'
+          , is_atc-bar: section.settings.is_atc-bar
           , rating_stars: section.settings.rating_stars 
           , show_art-no: section.settings.show_art-no
           , show-favorite: section.settings.show-favorite 
@@ -44,7 +45,8 @@
       </div>
       <div class="buybox__product-cart">
         {% render 'product-cart'
-          , out-of-stock: section.settings.out-of-stock %}
+          , out-of-stock: section.settings.out-of-stock
+          , is_atc-bar: section.settings.is_atc-bar %}
       </div>
       <div class="buybox__product-transport">
         {% render 'product-transport'
@@ -71,6 +73,12 @@
       }
     ],
     "settings": [
+      {
+        "type": "checkbox",
+        "id": "is_atc-bar",
+        "label": "Enable Label On ATC-Bar",
+        "default": false
+      },
       {
         "type": "checkbox",
         "id": "discountOffer",

@@ -13,6 +13,7 @@
      "product-details": {
        "type": "product-details",
       "settings": {
+        "is_atc-bar":false,
         "discountOffer": false,
         "express": false,
         "rating_stars": "5",
@@ -23,11 +24,26 @@
         "show_brand-logo": true,
         "show-variations": true,
         "show_energy_label": true,
+        "out-of-stock": false,
+        "simulate-content": false
+      }
+    },
+    "sticky-atc-bar":{
+      "type": "sticky-atc-bar",
+      "settings": {
+        "is_atc-bar": true,
+        "show_vendor":true,
+        "discountOffer": true,
+        "rating_stars": "5",
+        "show_art-no": false,
+        "show-favorite": false,
+        "bold-title": false,
         "out-of-stock": false
       }
-    }
+    },
+  
   },
-  "order": ["product-details"]
+  "order": ["product-details","sticky-atc-bar"]
 }
 // "order": ["main", "product-details"]
 

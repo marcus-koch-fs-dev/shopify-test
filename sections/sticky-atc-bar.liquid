@@ -1,0 +1,104 @@
+<link rel="stylesheet" href="{{ 'sticky-atc-bar.css' | asset_url }}">
+{% comment %} <script src="{{ 'product-details.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-transport.js' | asset_url }}" defer="defer"></script> {% endcomment %}
+
+<section class="sticky-atc-bar">
+  {% assign gallery = product.images %}
+  <div class="bar-center">
+    <div class="bar-center__left">
+      <img
+        class="bar-center__img"
+        src="{{ gallery[0] | image_url }}"
+        alt="{{ gallery[0].alt | escape }}"
+        width="50%"
+        height="auto">
+      {% render 'product-info'
+        , is_atc-bar: section.settings.is_atc-bar
+        , rating_stars: section.settings.rating_stars 
+        , show_art-no: section.settings.show_art-no
+        , show-favorite: section.settings.show-favorite 
+        , offensive_title: section.settings.bold-title
+        , show_brand: section.settings.show_brand-logo
+      %}
+    </div>
+    <div class="bar-center__right">
+      {% render 'product-price'
+        , rating_stars: section.settings.show_energy_label
+        , discountOffer: section.settings.discountOffer
+        , is_atc-bar: section.settings.is_atc-bar
+      %}
+      {% render 'product-cart'
+        , out-of-stock: section.settings.out-of-stock
+        , is_atc-bar: section.settings.is_atc-bar %}
+    </div>
+  </div>
+  <div class="bar-right"></div>
+</section>
+
+{% schema %}
+  {
+    "name": "Sticky ATC Bar",
+    "blocks": [],
+    "presets": [
+      {
+        "name": "Sticky ATC Bar"
+      }
+    ],
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "is_atc-bar",
+        "label": "Enable Label On ATC-Bar",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "discountOffer",
+        "label": "Enable Discount",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "rating_stars",
+        "label": "Rating Stars",
+        "default": "5"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_art-no",
+        "label": "Show Article Number",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show-favorite",
+        "label": "Show Favorite Icon",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "titel",
+        "label": "Product Title",
+        "default": "Default Product Name"
+      },
+      {
+        "type": "checkbox",
+        "id": "bold-title",
+        "label": "Show Bold Product Title",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_brand-logo",
+        "label": "Show Brand Logo",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "out-of-stock",
+        "label": "Product is out of stock",
+        "default": false
+      }
+    ]
+  }
+{% endschema %}

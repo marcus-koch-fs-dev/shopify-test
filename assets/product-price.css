@@ -22,6 +22,9 @@
   color: var(--colors_near-black);
   margin-top: 30px;
 }
+.discount__regular.atc {
+  margin-top: 0;
+}
 .discount__offer {
   color: var(--colors_semantic-price);
   border: solid 1px var(--colors_semantic-price);

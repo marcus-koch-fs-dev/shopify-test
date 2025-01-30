@@ -1,19 +1,30 @@
 <link rel="stylesheet" href="{{ 'product-info.css' | asset_url }}">
 
-{% comment %} 
-        Usage: {% render 'product-info', 
-        rating_stars: section.settings.rating_stars, 
-        show_art-no: section.settings.show_art-no, 
-        show-favorite: section.settings.show-favorite, 
-        isFav: section.settings.isFav, 
-        titel: section.settings.titel, 
-        offensive_title: section.settings.offensive_title, 
-        show_brand: section.settings.show_brand,          %}
- {% endcomment %}
+{% comment %}
+  Usage: {% render 'product-info',
+  is_atc-bar: section.settings.is_atc-bar,
+  rating_stars: section.settings.rating_stars,
+  show_art-no: section.settings.show_art-no,
+  show-favorite: section.settings.show-favorite,
+  isFav: section.settings.isFav,
+  titel: section.settings.titel,
+  offensive_title: section.settings.offensive_title,
+  show_brand: section.settings.show_brand %}
+{% endcomment %}
 
 
 <!-- Ratings and Product Information -->
 <div class="product-info">
+  {% if section.settings.is_atc-bar %}
+    <div class="atc-box">
+      <p>
+        <span class="product-name__vendor">{{ product.vendor }}</span>
+      </p>
+      <p>
+        <span class="product-name__title">Dito Sama Prep4You</span>
+      </p>
+    </div>
+  {% endif %}
   <!-- Row 1 -->
   <div class="product-info__row-one">
     <div class="product-info__web-view">
@@ -57,13 +68,15 @@
   </div>
 
   <!-- Row 2 -->
-  <div class="product-name">
-    {% if section.settings.bold-title %}
-      <h5 class="product-name__title">{{ product.title }}</h5>
-    {% else %}
-      <span class="product-name__title">{{ product.title }}</span>
-    {% endif %}
-  </div>
+  {% if section.settings.is_atc-bar == false %}
+    <div class="product-name">
+      {% if section.settings.bold-title %}
+        <h5 class="product-name__title">{{ product.title }}</h5>
+      {% else %}
+        <span class="product-name__title">{{ product.title }}</span>
+      {% endif %}
+    </div>
+  {% endif %}
 
 
   {% if section.settings.show_brand-logo %}

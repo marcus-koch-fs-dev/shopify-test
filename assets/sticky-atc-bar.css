@@ -1,0 +1,27 @@
+.sticky-atc-bar {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+}
+
+.bar-center {
+  display: inline-flex;
+  max-width: 1400px;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+.bar-center__left {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+}
+.bar-center__right {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.bar-center__img {
+  width: 64px;
+  height: 64px;
+}
