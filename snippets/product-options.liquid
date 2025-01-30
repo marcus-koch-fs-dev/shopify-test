@@ -5,12 +5,11 @@
 {% if section.settings.show-variations %}
   <div class="product-variants">
     <div class="product-variants__selected">
-      <span class="product-variants__category">Capacity:</span>
+      <span class="product-variants__category">Kapazität:</span>
       <span class="product-variants__option">{{ product.variants[0].title }}</span>
     </div>
 
     <ul class="product-variants__list">
-
       <!-- Fake -->
       <li class="product-variants__item variant--selected">
         <span class="variant__title">{{ product.variants[0].title }}</span>
@@ -25,10 +24,3 @@
     </ul>
   </div>
 {% endif %}
-
-
-{% comment %} {% for variant in product.variants %}
-    <li class="product-variants__item variant {% if variant.inventory_quantity <= 0 %}variant--out{% endif %}">
-      <span class="variant__title" onclick="handleVariant('{{ variant.id }}')">{{ variant.title }}</span>
-    </li>
-{% endfor %} {% endcomment %}
