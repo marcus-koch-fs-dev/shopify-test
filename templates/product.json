@@ -24,6 +24,7 @@
         "show_brand-logo": true,
         "show-variations": true,
         "show_energy_label": true,
+        "voucher":false,
         "out-of-stock": false,
         "simulate-content": true
       }

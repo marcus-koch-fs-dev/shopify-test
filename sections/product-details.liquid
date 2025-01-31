@@ -2,6 +2,7 @@
 <script src="{{ 'product-details.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'product-transport.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'sticky-atc-bar.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-voucher.js' | asset_url }}" defer="defer"></script>
 
 <section class="product-details">
 
@@ -49,6 +50,11 @@
           , out-of-stock: section.settings.out-of-stock
           , is_atc-bar: section.settings.is_atc-bar %}
       </div>
+
+      {% if section.settings.voucher %}
+        {% render 'product-voucher' %}
+      {% endif %}
+
       <div class="buybox__product-transport">
         {% render 'product-transport'
           , express: section.settings.express
@@ -152,6 +158,12 @@
         "id": "out-of-stock",
         "label": "Product is out of stock",
         "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "voucher",
+        "label": "Voucher Offer",
+        "default": true
       },
       {
         "type": "checkbox",

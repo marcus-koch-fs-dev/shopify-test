@@ -1,0 +1,70 @@
+/* Wrapper für den gesamten Gutschein */
+.voucher-wrapper {
+  padding: 12px;
+  background-color: var(--colors_off-white);
+  width: 100%;
+}
+
+.voucher__box-showing {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+.voucher__box-showing.copied {
+  display: none;
+}
+.voucher__ticket {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+.voucher__text {
+  font-size: 12px;
+  color: var(--colors_sun-down);
+}
+.voucher__bold-code {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--colors_sun-down);
+}
+
+/* Kopieren-Button */
+.voucher__copying-icon {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+.voucher__copying-icon:hover {
+  opacity: 0.7;
+}
+.voucher-copied {
+  display: none;
+  justify-content: start;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  font-size: 12px;
+}
+.voucher-copied.copied {
+  display: flex;
+}
+.voucher-copied__text {
+  font-size: 12px;
+  color: var(--colors_near-black);
+}
+.voucher-copied__text-upper {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--colors_near-black);
+}
+.voucher-copied__box {
+  background-color: #fff;
+  padding: 8px;
+  border: 1px solid var(--colors_near-black);
+}
+.voucher-copied__box-text {
+  font-size: 12px;
+  font-weight: 600;
+}
