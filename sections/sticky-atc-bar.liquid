@@ -1,6 +1,4 @@
 <link rel="stylesheet" href="{{ 'sticky-atc-bar.css' | asset_url }}">
-{% comment %} <script src="{{ 'product-details.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'product-transport.js' | asset_url }}" defer="defer"></script> {% endcomment %}
 
 <section class="sticky-atc-bar">
   {% assign gallery = product.images %}
@@ -22,11 +20,13 @@
       %}
     </div>
     <div class="bar-center__right">
-      {% render 'product-price'
-        , rating_stars: section.settings.show_energy_label
-        , discountOffer: section.settings.discountOffer
-        , is_atc-bar: section.settings.is_atc-bar
-      %}
+      <div class="bar-center__right-price">
+        {% render 'product-price'
+          , rating_stars: section.settings.show_energy_label
+          , discountOffer: section.settings.discountOffer
+          , is_atc-bar: section.settings.is_atc-bar
+        %}
+      </div>
       {% render 'product-cart'
         , out-of-stock: section.settings.out-of-stock
         , is_atc-bar: section.settings.is_atc-bar %}

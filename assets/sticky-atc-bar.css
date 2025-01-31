@@ -2,24 +2,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 60px; Höhe verringert für bessere Sichtbarkeit */
   position: fixed;
   bottom: -100px; /* Startet außerhalb des Viewports */
   left: 0;
   width: 100%;
   background: white;
   box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
-  /* padding: 10px; */
   text-align: center;
   transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
   opacity: 0;
-  pointer-events: none; /* Nicht klickbar, wenn nicht aktiv */
+  pointer-events: none; /
 }
 
 .sticky-atc-bar.active {
-  bottom: 0; /* Fährt sichtbar nach oben */
+  bottom: 0; 
   opacity: 1;
-  pointer-events: auto; /* Jetzt klickbar */
+  pointer-events: auto; 
 }
 
 .bar-center {
@@ -35,6 +33,10 @@
 }
 .bar-center__right {
   display: inline-flex;
+  gap: 24px;
+}
+.bar-center__right-price {
+  display: inline-flex;
   align-items: center;
   gap: 24px;
 }
@@ -42,4 +44,25 @@
 .bar-center__img {
   width: 64px;
   height: 64px;
+}
+
+@media (min-width: 1024px) {
+  .sticky-atc-bar {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bar-center {
+    justify-content: stretch;
+  }
+  .bar-center__right {
+    width: 100%;
+  }
+  .bar-center__right-price {
+    display: none;
+  }
+  .bar-center__left {
+    display: none;
+  }
 }

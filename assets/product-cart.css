@@ -2,6 +2,7 @@
   display: flex;
   gap: 12px;
   justify-content: start;
+  align-items: center;
 }
 
 /* Button for the amount */
@@ -149,14 +150,26 @@
       'cart';
     gap: 0;
     justify-content: stretch;
+    width: 100%;
   }
+
   .product-counter {
     justify-content: space-between;
     max-width: none;
   }
+
+  .cart-fav-box.atc {
+    display: flex;
+    width: 100%;
+  }
+
   .cart-button__submit {
     flex-grow: 1;
   }
+  .cart-button__submit.atc {
+    height: 100%;
+  }
+
   .product-counter__quantity {
     font-size: 20px;
   }
