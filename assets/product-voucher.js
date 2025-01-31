@@ -11,14 +11,15 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   copyButton.addEventListener('click', function () {
-    navigator.clipboard
-      .writeText(voucherCode.innerText)
-      .then(() => {
-        showCodeDisplay.classList.add('copied');
-        copiedNotification.classList.add('copied');
-      })
-      .catch((err) => {
-        console.error('Fehler beim Kopieren:', err);
-      });
+    showCodeDisplay.classList.add('copied');
+    copiedNotification.classList.add('copied');
+    // navigator.clipboard
+    //   .writeText(voucherCode.innerText)
+    //   .then(() => {
+    //     console.log('4');
+    //   })
+    //   .catch((err) => {
+    //     console.error('Fehler beim Kopieren:', err);
+    //   });
   });
 });
