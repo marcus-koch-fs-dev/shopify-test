@@ -12,7 +12,7 @@
       <li class="product-gallery__item">
         <img
           class="product-gallery__item-img"
-          src="{{ image | img_url }}"
+          src="{{ image | image_url }}"
           alt="{{ image.alt | escape }}"
           width="100%"
           height="auto">
@@ -29,7 +29,7 @@
     <div class="product-gallery__stage-wrapper">
       <img
         class="product-gallery__stage"
-        src="{{ gallery[0] | img_url }}"
+        src="{{ gallery[0] | image_url }}"
         alt="{{ gallery[0].alt | escape }}"
         width="100%"
         height="auto">
@@ -40,14 +40,14 @@
         width="24"
         height="24">
     </div>
-  </div>
 
-  <ul class="horizontal__list">
-    {% for image in gallery %}
-      {% if forloop.index < 3 %}
-        {% continue %}
-      {% endif %}
-      <li class="horizontal__item"></li>
-    {% endfor %}
-  </ul>
+    <ul class="horizontal__list">
+      {% for image in gallery %}
+        {% if forloop.index < 3 %}
+          {% continue %}
+        {% endif %}
+        <li class="horizontal__item"></li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>

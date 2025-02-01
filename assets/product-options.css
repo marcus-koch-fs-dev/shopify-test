@@ -1,3 +1,6 @@
+.product-variants {
+  /* display: none; */
+}
 .product-variants__category {
   color: var(--colors_near-black);
   font-weight: 600;

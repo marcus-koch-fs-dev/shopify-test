@@ -33,6 +33,7 @@
     <button type="submit" class="cart-button__submit  
   {% if is_out %} cart-button__out {% endif %} 
   {% if section.settings.is_atc-bar %} atc {% endif %} ">
+
       <div class="cart-button__text-wrapper">
         <span class="cart-button__text">In den Warenkorb</span>
         {% if section.settings.is_atc-bar == false %}
@@ -52,6 +53,7 @@
         {% endif %}
       </div>
     </button>
+
     <div class="cart-message {% if is_out %} cart-button__out {% endif %}">
       <span class="cart-message__text">Benachrichtigen, wenn verfügbar</span>
     </div>

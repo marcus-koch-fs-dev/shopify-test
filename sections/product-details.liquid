@@ -72,13 +72,13 @@
     </div>
   </div>
 
-  {% if section.settings.simulate-content %}
-    <div style="height: 2000px; background: lightgray;">
-      <p style="padding: 20px;">Testbereich zum Scrollen</p>
-    </div>
-  {% endif %}
 
 </section>
+{% if section.settings.simulate-content %}
+  <div class="fake-content">
+    <p style="padding: 20px;">Testbereich zum Scrollen</p>
+  </div>
+{% endif %}
 
 {% schema %}
   {

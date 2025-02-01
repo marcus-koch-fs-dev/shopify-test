@@ -66,7 +66,8 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  min-width: 350px;
+  width: 350px;
+  flex-grow: 1;
   box-shadow: 0 20px 40px -20px var(--colors_sun-down);
 }
 .cart-button__submit.atc {
@@ -116,7 +117,7 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  min-width: 350px;
+  min-width: 100%;
 }
 
 .fav-button {
@@ -156,13 +157,8 @@
     max-width: none;
   }
 
-  .cart-fav-box.atc {
-    display: flex;
-    width: 100%;
-  }
-
   .cart-button__submit {
-    flex-grow: 1;
+    width: auto;
   }
   .cart-button__submit.atc {
     height: 100%;

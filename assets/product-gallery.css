@@ -1,9 +1,9 @@
 .product-gallery {
   display: flex;
-  max-width: 688px;
+  max-width: 700px;
   overflow: hidden;
-  flex-grow: 1;
   gap: 24px;
+  justify-content: center;
 }
 
 .product-gallery__list {
@@ -19,9 +19,15 @@
   height: 60px;
   width: 60px;
 }
+.product-gallery__item-img:hover {
+  cursor: pointer;
+}
 .product-gallery__btn-next {
   height: 40px;
   width: 40px;
+}
+.product-gallery__btn-next:hover {
+  cursor: pointer;
 }
 
 .horizontal__list {
@@ -29,12 +35,13 @@
   border-radius: 4px;
   display: none;
   margin-top: 24px;
-  overflow: hidden;
-  width: 604px;
+  height: 4px;
+  flex-grow: 1;
 }
 .horizontal__item {
   height: 4px;
-  width: 70px;
+  border-radius: 4px;
+  width: 180px;
 }
 .horizontal__item:first-child {
   background-color: var(--colors_light-grey);
@@ -45,33 +52,31 @@
 }
 .product-gallery__stage-wrapper {
   position: relative;
-  max-height: 604px;
-  max-width: 604px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  max-height: 100%;
+  width: fit-content;
+  height: fit-content;
 }
 .product-gallery__stage {
-  height: 100%;
-  width: 100%;
+  max-height: 604px;
+  max-width: 604px;
+  height: auto;
 }
 .product-gallery__btn-zoom {
   position: absolute;
   bottom: 0;
   right: 0;
 }
+.product-gallery__btn-zoom:hover {
+  cursor: pointer;
+}
 
 @media (max-width: 1024px) {
-  .product-gallery__list {
-    flex-direction: column;
-    margin-right: 0;
-    gap: 8px;
-  }
-
-  .product-gallery__item-img {
-    height: 50px;
-    width: 50px;
-  }
-
-  .horizontal__list {
-    width: 90%;
+  .product-gallery {
+    gap: 0px;
   }
 }
 
@@ -79,8 +84,6 @@
   .product-gallery {
     flex-direction: column;
     align-items: center;
-    gap: 16px;
-    max-width: 100%;
   }
 
   .product-gallery__list {
@@ -88,24 +91,21 @@
   }
 
   .horizontal__list {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .product-gallery__stage-wrapper {
-    max-width: 90%;
-    max-height: auto;
+    display: block;
   }
 }
 
 @media (max-width: 425px) {
   .horizontal__item {
-    width: 50px;
+    width: 100px;
   }
 
   .product-gallery__stage-wrapper {
-    max-width: 100%;
-    padding: 0 10px;
+    padding: 0 20px;
+  }
+  .product-gallery__btn-zoom {
+    position: absolute;
+    bottom: 0px;
+    right: 20px;
   }
 }

@@ -1,8 +1,10 @@
 .price-energy {
   display: grid;
+  /* display: none; */
   grid-template-areas: 'pric engy';
 }
 .price {
+  /* display: none; */
   display: grid;
   grid-area: pric;
 }
@@ -76,7 +78,7 @@
 
 @media (max-width: 768px) {
   .price-energy {
-    display: grid;
+    /* display: grid; */
     grid-template-areas:
       'engy'
       'pric';

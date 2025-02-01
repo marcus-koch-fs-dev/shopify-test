@@ -2,6 +2,7 @@
   padding: 12px;
   background-color: var(--colors_off-white);
   width: 100%;
+  margin-bottom: 12px;
 }
 
 .voucher__box-showing {
