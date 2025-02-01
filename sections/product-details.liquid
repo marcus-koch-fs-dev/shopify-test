@@ -51,7 +51,11 @@
       </div>
 
       {% if section.settings.voucher %}
-        {% render 'product-voucher' %}
+        {% render 'product-voucher'
+          , discount_prefix: section.settings.discount_prefix
+          , discount_code: section.settings.discount_code
+          , discount_suffix: section.settings.discount_suffix
+        %}
       {% endif %}
 
       <div class="buybox__product-transport">
@@ -157,6 +161,24 @@
         "id": "voucher",
         "label": "Voucher Offer",
         "default": true
+      },
+      {
+        "type": "text",
+        "id": "discount_prefix",
+        "label": "Prefix Rabatttext",
+        "default": "Sie können -25% mit dem Rabattcode"
+      },
+      {
+        "type": "text",
+        "id": "discount_code",
+        "label": "Rabatt-Code",
+        "default": "Black25"
+      },
+      {
+        "type": "text",
+        "id": "discount_suffix",
+        "label": "Suffix Rabatttext",
+        "default": "sparen"
       },
       {
         "type": "checkbox",

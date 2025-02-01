@@ -4,6 +4,8 @@
   <div class="voucher__box-showing">
     <svg
       class="voucher__ticket"
+      role="img"
+      aria-label="Rabattangebot"
       width="24"
       height="24"
       viewBox="0 0 24 24"
@@ -28,12 +30,15 @@
         stroke-linecap="round"
         stroke-linejoin="round" />
     </svg>
-    <span class="voucher__text">Sie können -25% mit dem Rabattcode
-      <b class="voucher__bold-code">Black25%</b>
-      sparen
+    <span class="voucher__text">{{ section.settings.discount_prefix }}
+      <b class="voucher__bold-code">{{ section.settings.discount_code }}</b>
+      {{ section.settings.discount_suffix }}
     </span>
     <svg
       class="voucher__copying-icon"
+      role="button"
+      aria-label="Rabatt-Code kopieren!"
+      tabindex="0"
       width="16"
       height="16"
       viewBox="0 0 16 16"
