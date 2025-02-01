@@ -2,7 +2,7 @@ const drawer = document.querySelector('.drawer');
 const drawerText = document.querySelector('.drawer-text');
 const closeBtn = document.querySelector('.drawer-close');
 
-// Register event listener
+// Register drawer event listeners
 document.querySelectorAll('.drawer__svg.icon-arrow').forEach((svg) => {
   svg.addEventListener('click', function () {
     const content = parseDrawerContent(this.dataset.content);
@@ -26,30 +26,25 @@ closeBtn.addEventListener('click', function () {
  * - `;;LIST-START` → `<ul>`
  * - `;;LI` → `<li>` (List Item)
  * - `;;LIST-END` → `</ul>`
- *
- * Rules:
- * - `;;LIST-START` starts an unordered list (`<ul>`).
- * - `;;LI` adds a list item (`<li>`).
- * - If `;;LIST-START` is missing, it will be auto-created when `;;LI` appears.
- * - If `;;LIST-END` is missing, it will be auto-closed.
- * - Any text without a recognized marker is wrapped in `<p>`.
  * - Case-insensitive markers (e.g., `;;head`, `;;HEAD`, `;;Head` all work).
- *
  * @param {string} rawText - The structured text input to be parsed.
  * @returns {string} - The generated HTML string.
  */
 function parseDrawerContent(rawText) {
+  // Entferne leere Zeilen
   const lines = rawText
     .split('\n')
     .map((line) => line.trim())
-    .filter((line) => line); // Entferne leere Zeilen
+    .filter((line) => line);
   let htmlOutput = '';
-  let inList = false; // Status, ob eine Liste geöffnet ist
+  // Status, ob eine Liste geöffnet ist
+  let inList = false;
 
+  // Immer Uppercase für Vergleich
   lines.forEach((line) => {
     let parts = line.split(';;');
     let content = parts[0].trim();
-    let type = parts[1] ? parts[1].trim().toUpperCase() : ''; // Immer Uppercase für Vergleich
+    let type = parts[1] ? parts[1].trim().toUpperCase() : '';
 
     switch (type) {
       case 'HEAD':
@@ -68,8 +63,9 @@ function parseDrawerContent(rawText) {
         }
         break;
       case 'LI':
+        // Falls `LIST-START` vergessen wurde
         if (!inList) {
-          htmlOutput += `<ul>\n`; // Falls `LIST-START` vergessen wurde
+          htmlOutput += `<ul>\n`;
           inList = true;
         }
         htmlOutput += `<li>${content}</li>\n`;
@@ -81,8 +77,9 @@ function parseDrawerContent(rawText) {
         }
         break;
       default:
+        // Falls kein Marker erkannt wurde
         if (content !== '') {
-          htmlOutput += `<p>${content}</p>\n`; // Falls kein Marker erkannt wurde
+          htmlOutput += `<p>${content}</p>\n`;
         }
         break;
     }

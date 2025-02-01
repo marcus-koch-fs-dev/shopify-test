@@ -13,10 +13,6 @@
   flex-wrap: wrap;
   gap: 30px;
 }
-.payments__item {
-}
-.payments__img {
-}
 
 @media (max-width: 768px) {
   .payments {

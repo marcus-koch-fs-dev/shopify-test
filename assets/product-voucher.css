@@ -1,4 +1,3 @@
-/* Wrapper für den gesamten Gutschein */
 .voucher-wrapper {
   padding: 12px;
   background-color: var(--colors_off-white);
@@ -29,7 +28,6 @@
   color: var(--colors_sun-down);
 }
 
-/* Kopieren-Button */
 .voucher__copying-icon {
   width: 16px;
   height: 16px;

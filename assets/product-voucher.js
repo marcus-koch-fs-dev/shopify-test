@@ -1,3 +1,4 @@
+// Mock Function for coping voucher
 document.addEventListener('DOMContentLoaded', function () {
   const copyButton = document.querySelector('.voucher__copying-icon');
   const voucherCode = document.querySelector('.voucher__bold-code');
@@ -13,13 +14,5 @@ document.addEventListener('DOMContentLoaded', function () {
   copyButton.addEventListener('click', function () {
     showCodeDisplay.classList.add('copied');
     copiedNotification.classList.add('copied');
-    // navigator.clipboard
-    //   .writeText(voucherCode.innerText)
-    //   .then(() => {
-    //     console.log('4');
-    //   })
-    //   .catch((err) => {
-    //     console.error('Fehler beim Kopieren:', err);
-    //   });
   });
 });

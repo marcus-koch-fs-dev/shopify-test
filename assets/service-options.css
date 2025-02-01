@@ -28,9 +28,6 @@
   left: -13px;
 }
 
-.service__text-wrapper {
-}
-
 .service__text--bold {
   font-weight: 700;
   color: var(--colors_near-black);

@@ -79,7 +79,6 @@
 
 .brand__logo {
   display: flex;
-  /* margin: 0.25rem; */
 }
 
 @media (max-width: 768px) {

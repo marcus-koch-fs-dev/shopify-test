@@ -3,8 +3,7 @@
   max-width: 688px;
   overflow: hidden;
   flex-grow: 1;
-  gap: 24px; /* Standardabstand */
-  /* border: yellowgreen 2px solid; */
+  gap: 24px;
 }
 
 .product-gallery__list {
@@ -59,7 +58,6 @@
   right: 0;
 }
 
-/* ✅ Tablet-Ansicht (bis 1024px) */
 @media (max-width: 1024px) {
   .product-gallery__list {
     flex-direction: column;
@@ -77,7 +75,6 @@
   }
 }
 
-/* ✅ Mobile-Ansicht (bis 768px) */
 @media (max-width: 768px) {
   .product-gallery {
     flex-direction: column;
@@ -102,11 +99,7 @@
   }
 }
 
-/* ✅ Kleinere Smartphones (bis 425px) */
 @media (max-width: 425px) {
-  .horizontal__list {
-  }
-
   .horizontal__item {
     width: 50px;
   }

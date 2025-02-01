@@ -33,8 +33,6 @@
         {% if stars >= 1 and stars <= 5 %}
           {% for i in (1..stars) %}
             <span class="rating__star">&#9733;</span>
-          <!-- Gefüllter Stern -->
-            {% comment %} <span class="star">&#9734;</span> <!-- Ungefüllter Stern --> {% endcomment %}
           {% endfor %}
         {% endif %}
         <span class="rating__feedback">(89)</span>

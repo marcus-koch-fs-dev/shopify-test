@@ -103,7 +103,6 @@
   display: none;
 }
 
-/* Our of stock */
 .cart-message {
   display: none;
 }
@@ -120,7 +119,6 @@
   min-width: 350px;
 }
 
-/* Icon-Button */
 .fav-button {
   border-radius: 50%;
   border: 2px solid var(--colors_near-black);

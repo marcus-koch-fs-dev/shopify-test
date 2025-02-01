@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   position: fixed;
-  bottom: -100px; /* Startet außerhalb des Viewports */
+  bottom: -100px; 
   left: 0;
   width: 100%;
   background: white;
