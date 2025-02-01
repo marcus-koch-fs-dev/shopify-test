@@ -12,8 +12,17 @@ document.querySelectorAll('.drawer__svg.icon-arrow').forEach((svg) => {
   });
 });
 
+// Close Drawer on button click
 closeBtn.addEventListener('click', function () {
   drawer.classList.remove('open');
+});
+
+// Close Drawer with keyboard
+document.addEventListener('keydown', function (e) {
+  if (!drawer.classList.contains('open')) return;
+  if (e.key === 'Escape' || (e.key === 'Enter' && drawer.classList.contains('open'))) {
+    drawer.classList.remove('open');
+  }
 });
 
 /**
