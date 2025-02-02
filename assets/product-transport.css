@@ -8,17 +8,19 @@
 .transport__item {
   display: flex;
   justify-content: space-between;
-  height: 56px;
+  min-height: 56px;
+  height: auto;
   align-items: center;
 }
-
 .transport__item:nth-child(2) {
   border-bottom: 1px solid var(--colors_border-grey);
   border-top: 1px solid var(--colors_border-grey);
 }
 
 .express_item {
-  height: 28px;
+  min-height: 28px;
+  height: auto;
+  flex-wrap: wrap;
   display: flex;
   align-items: center;
 }

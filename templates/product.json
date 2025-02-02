@@ -15,7 +15,7 @@
       "settings": {
         "is_atc-bar": false,
         "discountOffer": false,
-        "express": false,
+        "express": true,
         "rating_stars": "5",
         "show_art-no": true,
         "show-favorite": false,
