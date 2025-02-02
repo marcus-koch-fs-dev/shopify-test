@@ -25,6 +25,9 @@
 .product-gallery__btn-next {
   height: 40px;
   width: 40px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
 }
 .product-gallery__btn-next:hover {
   cursor: pointer;
