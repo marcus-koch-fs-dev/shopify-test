@@ -2,6 +2,12 @@ const drawer = document.querySelector('.drawer');
 const drawerText = document.querySelector('.drawer-text');
 const closeBtn = document.querySelector('.drawer-close');
 
+// Type guard - preventing unmounted classes
+if (!drawer || !drawerText || !closeBtn) {
+  console.error('Required drawer elements not found');
+  return;
+}
+
 // Register drawer event listeners
 document.querySelectorAll('.drawer__svg.icon-arrow').forEach((svg) => {
   svg.addEventListener('click', function () {
