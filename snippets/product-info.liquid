@@ -21,7 +21,8 @@
         <span class="product-name__vendor">{{ product.vendor }}</span>
       </p>
       <p>
-        <span class="product-name__title">Dito Sama Prep4You</span>
+        {% comment %} <span class="product-name__title">Dito Sama Prep4You</span> {% endcomment %}
+        <span class="product-name__title">{{ product.title }}</span>
       </p>
     </div>
   {% endif %}
